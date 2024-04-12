@@ -3,7 +3,7 @@ import numpy as np
 
 input_file = 'D:\Input\Cigarette\Test Delhi\8. ANKA Insights-21_ Name_Test - Delhi-Mar-24_2024_01_04_11_31.xlsx'
 input_sheet = 'Sheet1'
-output_path = 'D:\Input\Python exp\CltB222219_dlh.csv'
+output_path = 'D:\Input\Python exp\CltB2_19_dlh.csv'
 
 #Full excel import & sheet parsing
 df_global = pd.read_excel(input_file,input_sheet)
