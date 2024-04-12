@@ -3,7 +3,7 @@ import numpy as np
 
 input_file = 'D:\Input\Cigarette\Test Delhi\8. ANKA Insights-21_ Name_Test - Delhi-Mar-24_2024_01_04_11_31.xlsx'
 input_sheet = 'Sheet1'
-output_path = 'D:\Input\Python exp\CltB256711_dlh.csv'
+output_path = 'D:\Input\Python exp\CltB2_1_56711_dlh.csv'
 
 #Full excel import & sheet parsing
 df_global = pd.read_excel(input_file,input_sheet)
@@ -31,6 +31,13 @@ for row in range(len(df_global)):
             df_global.drop(row,inplace=True)
         else:
             pass
+    elif df_global.loc[row,intended_col[2]]==7:
+        check_list2 = [(df_global.loc[row,intended_col[3]]>=2 and df_global.loc[row,intended_col[3]]<=4) , (df_global.loc[row,intended_col[4]]>=2 and df_global.loc[row,intended_col[4]]<=4) , (df_global.loc[row,intended_col[5]]>=2 and df_global.loc[row,intended_col[5]]<=4) , (df_global.loc[row,intended_col[6]]>=2 and df_global.loc[row,intended_col[6]]<=4)]
+        if sum(check_list2)>=3:
+            df_global.drop(row,inplace=True)
+        else:
+            pass 
+        
     else:
         df_global.drop(row,inplace=True)
 
