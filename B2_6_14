@@ -1,0 +1,63 @@
+import pandas as pd
+import numpy as np
+
+input_file = 'D:\Input\Cigarette\Test Delhi\8. ANKA Insights-21_ Name_Test - Delhi-Mar-24_2024_01_04_11_31.xlsx'
+input_sheet = 'Sheet1'
+output_path = 'D:\Input\Python exp\CltB2_6_14_dlh.csv'
+
+#Full excel import & sheet parsing
+df_global = pd.read_excel(input_file,input_sheet)
+control_dc = {'T_B2_1':['T_B14_1'],'T_B2_2':['T_B14_2'],'T_B2_3':['T_B14_3'],'T_B2_4':['T_B14_4'],'T_B2_5':['T_B14_5'],'T_B2_6':['T_B14_6']}
+control_col = ['T_B2_6']
+
+def iterating_func(control_dict,control_column,df,output):
+    
+    for df_row in range(len(df)):
+        if df.loc[df_row,control_column[0]]>=8 :
+           
+            
+            if df.loc[df_row,control_dict[control_column[0]][0]]>=4 :
+                #print('DF col',df_col)
+                #print(df_col+num_of_unique_cols)
+                df.drop(df_row,inplace=True)
+                print(df)
+            else:
+                pass
+        elif df.loc[df_row,control_column[0]] in range(1,7):
+            if df.loc[df_row,control_dict[control_column[0]][0]] in range(1,4):
+                #print('DF col',df_col)
+                #print(df_col+num_of_unique_cols)
+                df.drop(df_row,inplace=True)
+                print(df)
+            else:
+                 pass
+        
+        elif df.loc[df_row,control_column[0]]==7 :
+            if df.loc[df_row,control_dict[control_column[0]][0]] in range(2,5):
+                #print('DF col',df_col)
+                #print(df_col+num_of_unique_cols)
+                df.drop(df_row,inplace=True)
+                print(df)           
+        else:
+            df.drop(df_row,inplace=True)
+    df_modified = df.loc[:,['Resp_Id','Interviewer',control_column[0],control_dict[control_column[0]][0]]]
+
+    df_s = df_modified['Interviewer'].value_counts()
+    df_modified1=pd.DataFrame(df_s)
+    total_sum = df_modified1.sum()
+    total_sum.name = 'Total'
+
+
+    df_modified1 = df_modified1._append(total_sum)
+    
+    df_empty = pd.DataFrame()   
+    #empty dataframe
+
+
+    df_modified.to_csv(output, index=False)
+    df_empty.to_csv(output,mode='a', index=True)
+    df_modified1.to_csv(output, mode='a', index=True, header=False) 
+    
+    return(df_modified1)
+
+final_df = iterating_func(control_dc,control_col,df_global,output_path)
