@@ -3,7 +3,7 @@ import numpy as np
 
 input_file = 'D:\Input\Cigarette\Test Delhi\8. ANKA Insights-21_ Name_Test - Delhi-Mar-24_2024_01_04_11_31.xlsx'
 input_sheet = 'Sheet1'
-output_path = 'D:\Input\Python exp\CltB2_dlh.csv'
+output_path = 'D:\Input\Python exp\CltB2_1_13_dlh.csv'
 
 #Full excel import & sheet parsing
 df_global = pd.read_excel(input_file,input_sheet)
@@ -31,6 +31,13 @@ def iterating_func(control_dict,control_column,df,output):
                 print(df)
             else:
                  pass
+        elif df.loc[df_row,control_column[0]]==7 :
+            if df.loc[df_row,control_dict[control_column[0]][0]] in range(2,5):
+                #print('DF col',df_col)
+                #print(df_col+num_of_unique_cols)
+                df.drop(df_row,inplace=True)
+                print(df)     
+                
         else:
             df.drop(df_row,inplace=True)
     df_modified = df.loc[:,['Resp_Id','Interviewer',control_column[0],control_dict[control_column[0]][0]]]
