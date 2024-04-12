@@ -1,0 +1,55 @@
+import pandas as pd
+import numpy as np
+
+input_file = 'D:\Input\Cigarette\Test Delhi\8. ANKA Insights-21_ Name_Test - Delhi-Mar-24_2024_01_04_11_31.xlsx'
+input_sheet = 'Sheet1'
+output_path = 'D:\Input\Python exp\CltB2_2_17_dlh.csv'
+
+#Full excel import & sheet parsing
+df_global = pd.read_excel(input_file,input_sheet)
+intended_col = ['Resp_Id','Interviewer','T_B2_2','TOTAL KRAFT_T_B17_1','TOTAL KRAFT_T_B17_2','TOTAL KRAFT_T_B17_3','TOTAL KRAFT_T_B17_4','TOTAL KRAFT_T_B17_5','TOTAL KRAFT_T_B17_6','TOTAL KRAFT_T_B17_7','TOTAL KRAFT_T_B17_8','TOTAL KRAFT_T_B17_9']
+df_global = df_global[intended_col]
+control_dc = {'T_B2_1':['TOTAL CRUIZE_T_B17_1','TOTAL CRUIZE_T_B17_2','TOTAL CRUIZE_T_B17_3','TOTAL CRUIZE_T_B17_4','TOTAL CRUIZE_T_B17_5','TOTAL CRUIZE_T_B17_6','TOTAL CRUIZE_T_B17_7','TOTAL CRUIZE_T_B17_8','TOTAL CRUIZE_T_B17_9'],'T_B2_2':['TOTAL KRAFT_T_B17_1','TOTAL KRAFT_T_B17_2','TOTAL KRAFT_T_B17_3','TOTAL KRAFT_T_B17_4','TOTAL KRAFT_T_B17_5','TOTAL KRAFT_T_B17_6','TOTAL KRAFT_T_B17_7','TOTAL KRAFT_T_B17_8','TOTAL KRAFT_T_B17_9'],'T_B2_3':['TOTAL EDGE_T_B17_1','TOTAL EDGE_T_B17_2','TOTAL EDGE_T_B17_3','TOTAL EDGE_T_B17_4','TOTAL EDGE_T_B17_5','TOTAL EDGE_T_B17_6','TOTAL EDGE_T_B17_7','TOTAL EDGE_T_B17_8','TOTAL EDGE_T_B17_9'],'T_B2_4':['TOTAL JAZZ_T_B17_1','TOTAL JAZZ_T_B17_2','TOTAL JAZZ_T_B17_3','TOTAL JAZZ_T_B17_4','TOTAL JAZZ_T_B17_5','TOTAL JAZZ_T_B17_6','TOTAL JAZZ_T_B17_7','TOTAL JAZZ_T_B17_8','TOTAL JAZZ_T_B17_9'],'T_B2_5':['TOTAL ICE FRUIT_T_B17_1','TOTAL ICE FRUIT_T_B17_2','TOTAL ICE FRUIT_T_B17_3','TOTAL ICE FRUIT_T_B17_4','TOTAL ICE FRUIT_T_B17_5','TOTAL ICE FRUIT_T_B17_6','TOTAL ICE FRUIT_T_B17_7','TOTAL ICE FRUIT_T_B17_8','TOTAL ICE FRUIT_T_B17_9'],'T_B2_6':['TOTAL TANGO_T_B17_1','TOTAL TANGO_T_B17_2','TOTAL TANGO_T_B17_3','TOTAL TANGO_T_B17_4','TOTAL TANGO_T_B17_5','TOTAL TANGO_T_B17_6','TOTAL TANGO_T_B17_7','TOTAL TANGO_T_B17_8','TOTAL TANGO_T_B17_9']}
+control_col = ['T_B2_2']
+
+#B2_1>=1 and B2_1<=6, atleast 3 column has 1 or 2(in 'T_B6_1','T_B7_1','T_B8_1','T_B11_1')
+#B2_1>=8 and B2_1<=10, atleast 3 column has 4 or 5(in 'T_B6_1','T_B7_1','T_B8_1','T_B11_1')
+#else drop
+
+
+
+for row in range(len(df_global)):
+    if df_global.loc[row,intended_col[2]]>=1 and df_global.loc[row,intended_col[2]]<=6:
+        check_list = [(df_global.loc[row,intended_col[3]]>=1 and df_global.loc[row,intended_col[3]]<=2) , (df_global.loc[row,intended_col[4]]>=1 and df_global.loc[row,intended_col[4]]<=2) , (df_global.loc[row,intended_col[5]]>=1 and df_global.loc[row,intended_col[5]]<=2) , (df_global.loc[row,intended_col[6]]>=1 and df_global.loc[row,intended_col[6]]<=2),(df_global.loc[row,intended_col[7]]>=1 and df_global.loc[row,intended_col[7]]<=2),(df_global.loc[row,intended_col[8]]>=1 and df_global.loc[row,intended_col[8]]<=2),(df_global.loc[row,intended_col[9]]>=1 and df_global.loc[row,intended_col[9]]<=2),(df_global.loc[row,intended_col[10]]>=1 and df_global.loc[row,intended_col[10]]<=2),(df_global.loc[row,intended_col[11]]>=1 and df_global.loc[row,intended_col[11]]<=2)]
+        if sum(check_list)>=6:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,intended_col[2]]>=8 and df_global.loc[row,intended_col[2]]<=10:
+        check_list2 = [(df_global.loc[row,intended_col[3]]>=4 and df_global.loc[row,intended_col[3]]<=5) , (df_global.loc[row,intended_col[4]]>=4 and df_global.loc[row,intended_col[4]]<=5) , (df_global.loc[row,intended_col[5]]>=4 and df_global.loc[row,intended_col[5]]<=5) , (df_global.loc[row,intended_col[6]]>=4 and df_global.loc[row,intended_col[6]]<=5),(df_global.loc[row,intended_col[7]]>=4 and df_global.loc[row,intended_col[7]]<=5),(df_global.loc[row,intended_col[8]]>=4 and df_global.loc[row,intended_col[8]]<=5),(df_global.loc[row,intended_col[9]]>=4 and df_global.loc[row,intended_col[9]]<=5),(df_global.loc[row,intended_col[10]]>=4 and df_global.loc[row,intended_col[10]]<=5),(df_global.loc[row,intended_col[11]]>=4 and df_global.loc[row,intended_col[11]]<=5)]
+        if sum(check_list2)>=6:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,intended_col[2]]==7:
+        check_list2 = [(df_global.loc[row,intended_col[3]]>=2 and df_global.loc[row,intended_col[3]]<=4) , (df_global.loc[row,intended_col[4]]>=2 and df_global.loc[row,intended_col[4]]<=4) , (df_global.loc[row,intended_col[5]]>=2 and df_global.loc[row,intended_col[5]]<=4) , (df_global.loc[row,intended_col[6]]>=2 and df_global.loc[row,intended_col[6]]<=4)]
+        if sum(check_list2)>=3:
+            df_global.drop(row,inplace=True)
+        else:
+            pass     
+    else:
+        df_global.drop(row,inplace=True)
+
+df_s = df_global['Interviewer'].value_counts()
+df_modified1=pd.DataFrame(df_s)
+total_sum = df_modified1.sum()
+total_sum.name = 'Total'
+df_modified1 = df_modified1._append(total_sum)
+ 
+df_empty = pd.DataFrame()   
+ #empty dataframe
+
+
+df_global.to_csv(output_path, index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified1.to_csv(output_path, mode='a', index=True, header=False)
