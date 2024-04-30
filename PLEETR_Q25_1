@@ -1,0 +1,56 @@
+import pandas as pd
+import numpy as np
+
+input_file = r'D:\Input\Cigarette\PLEETR_Mumbai\20_ Edition Trio -01_04_24.xlsx'
+input_sheet = 'Data'
+#output_path = 'D:\Input\Python exp\test_individual56711.csv'
+output_path = r'D:\Input\Python exp\testQ25_1_Mumbai.csv'
+
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+
+df_global=df.copy()
+
+
+filt = (df['T_Q25_1'] != df['Q25_1']) & (df['T_Q25_2']  != df['Q25_1'])  & (df['T_Q25_3']  != df['Q25_1']) 
+
+
+nom = df_global.loc[filt,['Respondent_ID','Interviewer','T_Q25_1','T_Q25_2','T_Q25_3','Q25_1']]
+
+
+# new_df = (
+#     df[(df['Duration']).between(pd.Timedelta("00:20:00"),
+#                                             pd.Timedelta("00:50:00"))]
+# )
+
+
+
+# nom=new_df
+      
+df_modified = nom
+# Ax=pd.DataFrame(name_col4[col])                                                    
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+#df_empty = pd.DataFrame()   
+ #empty dataframe
+
+#df_empty.to_csv(output,mode='a', index=True)
+# Ax.to_csv(output, index=False, header=False) 
+
+df_empty= pd.DataFrame()  
+
+df_modified.to_csv(output_path, index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, ) 
+# df_empty.to_csv(output_path,mode='a', index=True) 
+
+
+
