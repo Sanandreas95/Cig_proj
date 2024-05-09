@@ -1,0 +1,31 @@
+import pandas as pd
+import numpy as np
+
+input_file = r'D:\Input\Cigarette\PLEETR_Mumbai\20_ Edition Trio -01_04_24.xlsx'
+input_sheet = 'Sheet1'
+output_path = r'D:\Input\Python exp\pleetr_brandsum1.csv'
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+
+
+df_global['sum_columns'] = df_global[['A_Q14_1_1','A_Q14_1_2','A_Q14_1_3','A_Q14_1_4','A_Q14_1_5','A_Q14_1_6','A_Q14_1_7','A_Q14_1_8','A_Q14_1_9','A_Q14_1_10','A_Q14_1_11','A_Q14_1_12','A_Q14_1_13','A_Q14_1_14','A_Q14_1_15','A_Q14_1_16','A_Q14_1_17','A_Q14_1_18','A_Q14_1_19','A_Q14_1_20','A_Q14_1_21','A_Q14_1_22','A_Q14_1_23','A_Q14_1_24','A_Q14_1_25','A_Q14_1_26','A_Q14_1_27','A_Q14_1_28','A_Q14_1_29','A_Q14_1_30','A_Q14_1_31','A_Q14_1_32']].sum(axis=1)
+
+
+df_modified = df_global.loc[:,['Resp_Name','Interviewer','sum_columns']]
+
+crosstab_result = pd.crosstab(df_modified['Interviewer'], df_modified['sum_columns'])
+
+
+
+# dynamic_headers = [f'brands{i}' for i in range(1, len(crosstab_result.columns) + 1)]
+
+count1=pd.DataFrame(crosstab_result )
+
+# Sum_name=pd.DataFrame(df_s)
+count1.to_csv(output_path)
+
+
+
