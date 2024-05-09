@@ -1,0 +1,110 @@
+import pandas as pd
+import numpy as np
+
+input_file = r'D:\Input\Cigarette\PLEETR_Mumbai\20_ Edition Trio -01_04_24.xlsx'
+input_sheet = 'Sheet1'
+output_path = r'D:\Input\Python exp\pleetr_secwise.csv'
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+
+Dict_brandname={1:['Classic (Unspecified)'],
+                2:['Classic'],
+                3:['Classic Connect'],
+                4:['Classic Ice Burst'],
+                5:['Classic Mild'],
+                6:['Editions (Unspecified)'],
+                7:['Editions Trio'],
+                8:['Trio'],
+                9:['Four Square (Unspecified)'],
+                10:['Four Square Clove Crush'],
+                11:['Four Square Crush'],
+                12:['Four Square Crush Pan'],
+                13:['Four Square Special'],
+                14:['Gold Flake (Unspecified)'],
+                15:['Gold Flake Indie Mint'],
+                16:['Gold Flake Kings'],
+                17:['Gold Flake Kings Lights'],
+                18:['Gold Flake Premium'],
+                19:['Gold Flake Premium Filter'],
+                20:['Gold Flake Premium Fresh Mint'],
+                21:['Gold Flake Premium Mint Switch'],
+                22:['Gold Flake Super Star'],
+                23:['Marlboro (Unspecified)'],
+                24:['Marlboro Advance'],
+                25:['Marlboro Clove'],
+                26:['Steller (Unspecified)'],
+                27:['Steller Define'],
+                28:['Steller Shift'],
+                29:['Total (Unspecified)'],
+                30:['Total Refresh'],
+                31:['Total Royal Twist'],
+                32:['Total Spearmint'],
+                }      
+
+
+Dict_sec={1:'SEC A',
+          2:'SEC B',
+          3:'SEC C',
+         }
+
+
+# df_global['Q21'] = df_global['Q21'].map(Dict_brandname)
+
+# df_global['SEC_Q'] = df_global['SEC_Q'].map(Dict_sec)
+
+   
+pivoted_df = df_global.pivot( columns='SEC_Q', values='Q21').reset_index(drop=True) 
+
+series_a = pivoted_df[1].value_counts()
+series_b = pivoted_df[2].value_counts()
+series_c = pivoted_df[3].value_counts()
+
+
+result = pd.concat([series_a, series_b, series_c], axis=1)
+
+total_sum = result.sum()
+total_sum.name = 'Total'
+result = result._append(total_sum)
+result['Total']=result.sum(min_count=1,axis=1)
+
+result = result.rename(index=Dict_brandname)
+
+
+result.to_csv(output_path,header=['SEC A', 'SEC B', 'SEC C','Total'], index=True)
+
+
+# df_a=pd.DataFrame(series_a)
+# # print(df_a)
+
+# df_b=pd.DataFrame(series_b)
+
+
+# df_c=pd.DataFrame(series_c)
+# # df_c.shape
+
+
+# df_a.to_csv(output_path,  index=True ) 
+# df_b.to_csv(output_path, mode='a', index=True ) 
+# df_c.to_csv(output_path, mode='a', index=True ) 
+
+
+
+# Final_err = pd.concat([df_a, df_b, df_c], axis=1) 
+
+# total_sum = Final_err.sum()
+# total_sum.name = 'Total'
+# Final_err = Final_err._append(total_sum)
+# Final_err['Total']=Final_err.sum(min_count=1,axis=1)
+# Final_err.to_csv(output_path,header=['SEC A', 'SEC B', 'SEC C'],index=False ) 
+
+
+
+ 
+# pivoted_df.to_csv(output_path, index=False )         
+
+    
+        
+    
