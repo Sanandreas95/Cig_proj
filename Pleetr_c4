@@ -1,0 +1,47 @@
+import pandas as pd
+import numpy as np
+
+input_file = r'D:\Input\Cigarette\PLEETR_Mumbai\20_ Edition Trio -01_04_24.xlsx'
+input_sheet = 'Sheet1'
+output_path = r'D:\Input\Python exp\pleetr_moubeditionansweringc4wrong.csv'
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+
+
+for row in range (len(df_global)):
+    if ((df_global.loc[row,'Q21']==6) or (df_global.loc[row,'Q21']==7) or (df_global.loc[row,'Q21']==8)):
+        
+        if  (df_global.loc[row,'C4']==2) :
+            
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+        
+    else:
+        df_global.drop(row,inplace=True)
+df_modified= df_global.loc[:,['Resp_Name','Interviewer','Q21','C4']]      
+df_s = df_modified['Interviewer'].value_counts()
+
+dataframe_count=pd.DataFrame(df_s)
+total=dataframe_count.sum()
+total.name='Total'
+dataframe_count=dataframe_count._append(total)
+df_empty= pd.DataFrame() 
+
+
+
+
+df_empty.to_csv(output_path, index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+dataframe_count.to_csv(output_path,mode='a',index=True)
+
+
+
+        
+
+
+
