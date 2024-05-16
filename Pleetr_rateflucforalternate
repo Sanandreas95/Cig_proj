@@ -1,0 +1,106 @@
+import pandas as pd
+import numpy as np
+
+input_file = r'D:\Input\Cigarette\PLEETR_Mumbai\20_ Edition Trio -01_04_24.xlsx'
+input_sheet = 'Sheet1'
+output_path = r'D:\Input\Python exp\pleetr_ratefluctuationforalternate.csv'
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+control_col=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32]
+cig_price={ 1:[0,0],
+            2:[18,165],
+            3:[15,150],
+            4:[18,165],
+            5:[18,165],
+            6:[0,0],
+            7:[10,160],
+            8:[10,160],
+            9:[0,0],
+            10:[10,89],
+            11:[10,89],
+            12:[10,89],
+            13:[10,85],
+            14:[0,0],
+            15:[10,100],
+            16:[18,165],
+            17:[18,165],
+            18:[10,95],
+            19:[10,95],
+            20:[10,95],
+            21:[10,95],
+            22:[7,59],
+            23:[0,0],
+            24:[18,165],
+            25:[18,165],
+            26:[0,0],
+            27:[10,100],
+            28:[10,100],
+            29:[0,0],
+            30:[7,70],
+            31:[7,70],
+            32:[8,75],
+                
+            }
+
+
+df_global = df_global.dropna(subset=['Q24'])
+
+df_global.reset_index(drop=True, inplace=True)
+
+
+
+for df_row in range (len(df_global)):
+    
+   
+    if df_global.loc[df_row,'Q27'] == 1 :
+        
+        
+        
+        if (cig_price[df_global.loc[df_row,'Q21']][1])-(cig_price[df_global.loc[df_row,'Q25_1']][1])<=40 and (cig_price[df_global.loc[df_row,'Q21']][1])-(cig_price[df_global.loc[df_row,'Q25_1']][1])>=-40:
+        
+        
+            df_global.drop(df_row,inplace=True)
+           
+        else:
+            pass
+            
+        
+        
+        
+    elif df_global.loc[df_row,'Q27'] ==2 :
+        if ((cig_price[df_global.loc[df_row,'Q21']][0])-(cig_price[df_global.loc[df_row,'Q25_1']][0])<=4) & ((cig_price[df_global.loc[df_row,'Q21']][0])-(cig_price[df_global.loc[df_row,'Q25_1']][0])>= -4):
+           
+            df_global.drop(df_row,inplace=True)
+        
+    else:
+        df_global.drop(df_row,inplace=True)
+         
+            
+df_modified = df_global.loc[:,['Respondent_ID','Resp_Name','Interviewer','Q21','Q25_1','Q27']]
+
+    
+df_empty= pd.DataFrame()  
+df_s = df_modified['Interviewer'].value_counts()
+    
+interviewererror=pd.DataFrame(df_s)    
+
+total_sum = interviewererror.sum()
+total_sum.name = 'Total'
+interviewererror = interviewererror._append(total_sum)
+interviewererror['Total']=interviewererror.sum(min_count=1,axis=1)
+   
+   
+    
+
+
+    
+        
+    
+df_modified.to_csv(output_path, index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+    
+    
+interviewererror.to_csv(output_path, mode='a', index=True, )         
