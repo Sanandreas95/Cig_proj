@@ -1,0 +1,47 @@
+import pandas as pd
+import numpy as np
+
+input_file = r'D:\Input\Cigarette\PLEETR_Mumbai\20_ Edition Trio -01_04_24.xlsx'
+input_sheet = 'Sheet1'
+output_path = r'D:\Input\Python exp\pleetr_D1.csv'
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+for df_row in range (len(df_global)):
+    if (((df_global.loc[df_row,'Q14']==6 or df_global.loc[df_row,'Q14']==7 or df_global.loc[df_row,'Q14']==8)|(df_global.loc[df_row,'A_Q14_1_6']==1 or df_global.loc[df_row,'A_Q14_1_7']==1 or df_global.loc[df_row,'A_Q14_1_8']==1)|(df_global.loc[df_row,'A_Q14A_6']==1 or df_global.loc[df_row,'A_Q14A_7']==1 or df_global.loc[df_row,'A_Q14A_8']==1)|(df_global.loc[df_row,'A_Q15_6']==1 or df_global.loc[df_row,'A_Q15_7']==1 or df_global.loc[df_row,'A_Q15_8']==1)|(df_global.loc[df_row,'A_Q15A_6']==1 or df_global.loc[df_row,'A_Q15A_7']==1 or df_global.loc[df_row,'A_Q15A_8']==1)) & (df_global.loc[df_row,'A_Q16_6']==0 and df_global.loc[df_row,'A_Q16_7']==0 and df_global.loc[df_row,'A_Q16_8']==0)):
+        check_list = [(df_global.loc[df_row,'A_D1_2']==1), (df_global.loc[df_row,'A_D1_3']==1) , (df_global.loc[df_row,'A_D1_4']==1),(df_global.loc[df_row,'A_D1_6']==1),(df_global.loc[df_row,'A_D1_7']==1),(df_global.loc[df_row,'A_D1_9']==1),(df_global.loc[df_row,'A_D1_10']==1),(df_global.loc[df_row,'A_D1_12']==1),(df_global.loc[df_row,'A_D1_14']==1),(df_global.loc[df_row,'A_D1_15']==1),(df_global.loc[df_row,'A_D1_16']==1),(df_global.loc[df_row,'A_D1_17']==1),(df_global.loc[df_row,'A_D1_19']==1),(df_global.loc[df_row,'A_D1_20']==1)]
+        if sum(check_list)>=3 and sum(check_list)<=13 :
+            df_global.drop(df_row,inplace=True)
+        else:
+            pass
+    else :
+          df_global.drop(df_row,inplace=True)
+
+
+df_modified = df_global.loc[:,['Respondent_ID','Resp_Name','Interviewer']]
+
+    
+df_empty= pd.DataFrame()  
+df_s = df_modified['Interviewer'].value_counts()
+    
+interviewererror=pd.DataFrame(df_s)    
+
+total_sum = interviewererror.sum()
+total_sum.name = 'Total'
+interviewererror = interviewererror._append(total_sum)
+
+   
+   
+    
+
+
+    
+        
+    
+df_modified.to_csv(output_path, index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+    
+    
+interviewererror.to_csv(output_path, mode='a', index=True, )              
