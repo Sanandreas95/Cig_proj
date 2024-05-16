@@ -1,0 +1,49 @@
+import pandas as pd
+import numpy as np
+
+input_file = r'D:\Input\Cigarette\PLEETR_Mumbai\20_ Edition Trio -01_04_24.xlsx'
+input_sheet = 'Sheet1'
+output_path = r'D:\Input\Python exp\testmoubandtom_1_Mumbai.csv'
+
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+
+filt = (df_global['Q21'] != df_global['Q14'])
+
+
+nom = df_global.loc[filt,['Respondent_ID','Resp_Name','Interviewer','Q14','Q21']]
+
+
+
+df_modified = nom
+# Ax=pd.DataFrame(name_col4[col])                                                    
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+
+
+df_empty= pd.DataFrame()  
+
+df_modified.to_csv(output_path, index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, ) 
+df_empty.to_csv(output_path,mode='a', index=True) 
+
+
+
+
+
+
+
+
+
+
