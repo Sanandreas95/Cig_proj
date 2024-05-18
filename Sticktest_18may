@@ -1102,9 +1102,7 @@ Valuecount.to_csv(output_path, mode='a', index=True, )
 # Error14 : Relation between K11 & K1 , K4']
 
 
-input_file = r'D:\Input\Cigarette\Stick_test\3. Stick 1 - Vijayawada-May-24_2024_16_05_20_54.xlsx'
-input_sheet = 'Sheet1'
-output_path = r'D:\Input\Python exp\Sticktest_2.csv'
+
 
 
 df = pd.read_excel(input_file,input_sheet)
