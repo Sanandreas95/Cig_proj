@@ -1,0 +1,1188 @@
+import pandas as pd
+import numpy as np
+
+input_file = r'D:\Input\Cigarette\Stick_test\7. Stick 1 - Vijayawada-May-24_2024_18_05_22_17.xlsx'
+input_sheet = 'Sheet1'
+output_path = r'D:\Input\Python exp\2nddaySticktest18_vijayawada.csv'
+
+
+
+# Error1 : Interview duration
+
+
+# df = pd.read_excel(input_file,input_sheet)
+
+
+# df_global=df.copy()
+
+# Error_n = ['Error1 :-    Interview Timing outside  interval 00:20:00-00:50:00 ']
+
+# df_global = df_global.iloc[1:,:]
+
+# df['Duration'].info()
+
+# df['Duration']=df['Duration'].astype(str)
+
+
+
+# df_global['Duration'] = pd.to_timedelta(df_global['Duration'])
+# filt = (df_global['Duration']<=pd.Timedelta("00:20:00")) |  (df_global['Duration']>=pd.Timedelta("00:50:00"))
+
+
+# nom = df_global.loc[filt,['Resp_Id','Resp_name','Interviewer','Duration']]
+
+
+
+      
+# df_modified = nom
+                                                
+# df_s = df_modified['Interviewer'].value_counts()
+
+# Valuecount=pd.DataFrame(df_s)
+# total_sum = Valuecount.sum()
+# total_sum.name = 'Total'
+# Valuecount=Valuecount._append(total_sum)
+
+  
+
+
+# df_empty= pd.DataFrame() 
+# df_name= pd.DataFrame(Error_n)  
+
+
+
+
+ 
+# df_name.to_csv(output_path,index=False)
+# df_empty.to_csv(output_path,mode='a', index=True)
+# df_empty.to_csv(output_path,mode='a', index=True)
+# df_empty.to_csv(output_path,mode='a', index=True)
+# df_modified.to_csv(output_path,mode='a', index=False)
+# df_empty.to_csv(output_path,mode='a', index=True)
+# df_empty.to_csv(output_path,mode='a', index=True)
+# Valuecount.to_csv(output_path, mode='a', index=True, ) 
+
+
+
+
+
+
+
+# Error2 : Cigarette starting age
+
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+Error_n = ['Error2 :-    People starting cigarette after 25 yrs ']
+
+filt = (df['Q14_Years']  > 25)
+
+
+nom = df_global.loc[filt,['Resp_Id','Resp_name','Interviewer','Q14_Years']]
+
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+#df_empty = pd.DataFrame()   
+ #empty dataframe
+
+#df_empty.to_csv(output,mode='a', index=True)
+# Ax.to_csv(output, index=False, header=False) 
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+
+
+
+
+
+
+df_name.to_csv(output_path,index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, ) 
+
+
+
+
+
+
+
+
+# Error3 : Relation between AP2 & AP5, AP6, AP7, AP8, AP9 
+
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+Error_n = ['Error3 :-    Relation between AP2 & AP5, AP6, AP7, AP8, AP9 ']
+
+
+for row in range(len(df_global)):
+    if df_global.loc[row,'AP2']>=1 and df_global.loc[row,'AP2']<=6:
+        check_list = [(df_global.loc[row,'AP5']>=1 and df_global.loc[row,'AP5']<=2) , (df_global.loc[row,'AP6']>=1 and df_global.loc[row,'AP6']<=2) , (df_global.loc[row,'AP7']>=1 and df_global.loc[row,'AP7']<=2) , (df_global.loc[row,'AP8']>=1 and df_global.loc[row,'AP8']<=2), (df_global.loc[row,'AP9']>=1 and df_global.loc[row,'AP9']<=2)]
+        if sum(check_list)>=3:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,'AP2']>=8 and df_global.loc[row,'AP2']<=10:
+        check_list2 = [(df_global.loc[row,'AP5']>=4 and df_global.loc[row,'AP5']<=5) , (df_global.loc[row,'AP6']>=4 and df_global.loc[row,'AP6']<=5) , (df_global.loc[row,'AP7']>=4 and df_global.loc[row,'AP7']<=5) , (df_global.loc[row,'AP8']>=4 and df_global.loc[row,'AP8']<=5), (df_global.loc[row,'AP9']>=4 and df_global.loc[row,'AP9']<=5)]
+        if sum(check_list2)>=3:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,'AP2']==7:
+        check_list3 = [(df_global.loc[row,'AP5']>=2 and df_global.loc[row,'AP5']<=4) , (df_global.loc[row,'AP6']>=2 and df_global.loc[row,'AP6']<=4) , (df_global.loc[row,'AP7']>=2 and df_global.loc[row,'AP7']<=4) , (df_global.loc[row,'AP8']>=2 and df_global.loc[row,'AP8']<=4), (df_global.loc[row,'AP9']>=4 and df_global.loc[row,'AP9']<=5)]
+        if sum(check_list3)>=3:
+            df_global.drop(row,inplace=True)
+        else:
+            pass 
+        
+    else:
+        df_global.drop(row,inplace=True)
+
+
+
+nom = df_global.loc[:,['Resp_Id','Resp_name','Interviewer','AP2','AP5','AP6','AP7','AP8','AP9']]
+
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+#df_empty = pd.DataFrame()   
+ #empty dataframe
+
+#df_empty.to_csv(output,mode='a', index=True)
+# Ax.to_csv(output, index=False, header=False) 
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+
+
+
+
+
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+
+
+
+
+
+
+
+
+
+
+
+# Error4 : Relation between AP2 & AP15
+
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+Error_n = ['Error4 :-    Relation between AP2 & AP15 ']
+
+for row in range(len(df_global)):
+    if df_global.loc[row,'AP2']>=1 and df_global.loc[row,'AP2']<=6:
+        
+        if df_global.loc[row,'AP15']<=2:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,'AP2']>=8 and df_global.loc[row,'AP2']<=10:
+        
+        if df_global.loc[row,'AP15']>=4:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,'AP2']==7:
+        
+        if (df_global.loc[row,'AP15']>=2 and df_global.loc[row,'AP15']<=4):
+            df_global.drop(row,inplace=True)
+        else:
+            pass 
+        
+    else:
+        df_global.drop(row,inplace=True)
+
+
+
+nom = df_global.loc[:,['Resp_Id','Resp_name','Interviewer','AP2','AP15']]
+
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+#df_empty = pd.DataFrame()   
+ #empty dataframe
+
+#df_empty.to_csv(output,mode='a', index=True)
+# Ax.to_csv(output, index=False, header=False) 
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+
+
+
+
+
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Error5 : Relation between AP2 & AP18 
+
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+Error_n = ['Error5 :-    Relation between AP2 & AP18 ']
+
+
+for row in range(len(df_global)):
+    if df_global.loc[row,'AP2']>=1 and df_global.loc[row,'AP2']<=6:
+        check_list = [(df_global.loc[row,'T_AP18_1']>=1 and df_global.loc[row,'T_AP18_1']<=2) , (df_global.loc[row,'T_AP18_2']>=1 and df_global.loc[row,'T_AP18_2']<=2) , (df_global.loc[row,'T_AP18_3']>=1 and df_global.loc[row,'T_AP18_3']<=2) , (df_global.loc[row,'T_AP18_4']>=1 and df_global.loc[row,'T_AP18_4']<=2)  , (df_global.loc[row,'T_AP18_5']>=1 and df_global.loc[row,'T_AP18_5']<=2)  , (df_global.loc[row,'T_AP18_6']>=1 and df_global.loc[row,'T_AP18_6']<=2)  , (df_global.loc[row,'T_AP18_7']>=1 and df_global.loc[row,'T_AP18_7']<=2)]
+        if sum(check_list)>=4:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,'AP2']>=8 and df_global.loc[row,'AP2']<=10:
+        check_list2 = [(df_global.loc[row,'T_AP18_1']>=4 and df_global.loc[row,'T_AP18_1']<=5) , (df_global.loc[row,'T_AP18_2']>=4 and df_global.loc[row,'T_AP18_2']<=5) , (df_global.loc[row,'T_AP18_3']>=4 and df_global.loc[row,'T_AP18_3']<=5) , (df_global.loc[row,'T_AP18_4']>=4 and df_global.loc[row,'T_AP18_4']<=5)  , (df_global.loc[row,'T_AP18_5']>=4 and df_global.loc[row,'T_AP18_5']<=5)  , (df_global.loc[row,'T_AP18_6']>=4 and df_global.loc[row,'T_AP18_6']<=5)  , (df_global.loc[row,'T_AP18_7']>=4 and df_global.loc[row,'T_AP18_7']<=5)]
+        if sum(check_list2)>=4:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,'AP2']==7:
+        check_list3 = [(df_global.loc[row,'T_AP18_1']>=2 and df_global.loc[row,'T_AP18_1']<=4) , (df_global.loc[row,'T_AP18_2']>=2 and df_global.loc[row,'T_AP18_2']<=4) , (df_global.loc[row,'T_AP18_3']>=2 and df_global.loc[row,'T_AP18_3']<=4) , (df_global.loc[row,'T_AP18_4']>=2 and df_global.loc[row,'T_AP18_4']<=4)  , (df_global.loc[row,'T_AP18_5']>=2 and df_global.loc[row,'T_AP18_5']<=4)  , (df_global.loc[row,'T_AP18_6']>=2 and df_global.loc[row,'T_AP18_6']<=4)  , (df_global.loc[row,'T_AP18_7']>=2 and df_global.loc[row,'T_AP18_7']<=4)]
+        if sum(check_list3)>=4:
+            df_global.drop(row,inplace=True)
+        else:
+            pass 
+        
+    else:
+        df_global.drop(row,inplace=True)
+
+
+
+nom = df_global.loc[:,['Resp_Id','Resp_name','Interviewer','AP2','T_AP18_1','T_AP18_2','T_AP18_3','T_AP18_4','T_AP18_5', 'T_AP18_6' , 'T_AP18_7']]
+
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+#df_empty = pd.DataFrame()   
+ #empty dataframe
+
+#df_empty.to_csv(output,mode='a', index=True)
+# Ax.to_csv(output, index=False, header=False) 
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+
+
+
+
+
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+
+
+
+
+
+
+
+# Error6 : Relation between AP25 & AP19, AP20, AP21, AP22, AP23, AP24, AP26 
+
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+Error_n = ['Error6 :-    Relation between AP25 & AP19, AP20, AP21, AP22, AP23, AP24, AP26 ']
+
+
+for row in range(len(df_global)):
+    if df_global.loc[row,'AP25']>=1 and df_global.loc[row,'AP25']<=6:
+        check_list = [(df_global.loc[row,'AP19']!=3) , (df_global.loc[row,'AP20']!=3) , (df_global.loc[row,'AP21']>=1 and df_global.loc[row,'AP21']<=2) , (df_global.loc[row,'AP22']!=3)  , (df_global.loc[row,'AP23']!=3)  , (df_global.loc[row,'AP24']!=3)  , (df_global.loc[row,'AP26']>=1 and df_global.loc[row,'AP26']<=2)]
+        if sum(check_list)>=4:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,'AP25']>=8 and df_global.loc[row,'AP25']<=10:
+        check_list2 = [(df_global.loc[row,'AP19']==3) , (df_global.loc[row,'AP20']==3) , (df_global.loc[row,'AP21']>=4 and df_global.loc[row,'AP21']<=5) , (df_global.loc[row,'AP22']==3)  , (df_global.loc[row,'AP23']==3)  , (df_global.loc[row,'AP24']==3)  , (df_global.loc[row,'AP26']>=4 and df_global.loc[row,'AP26']<=5)]
+        if sum(check_list2)>=4:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    # elif df_global.loc[row,'AP25']==7:
+    #     check_list3 = [(df_global.loc[row,'AP19']>=2 and df_global.loc[row,'AP19']<=4) , (df_global.loc[row,'AP20']>=2 and df_global.loc[row,'AP20']<=4) , (df_global.loc[row,'AP21']>=2 and df_global.loc[row,'AP21']<=4) , (df_global.loc[row,'AP22']>=2 and df_global.loc[row,'AP22']<=4)  , (df_global.loc[row,'AP23']>=2 and df_global.loc[row,'AP23']<=4)  , (df_global.loc[row,'AP24']>=2 and df_global.loc[row,'AP24']<=4)  , (df_global.loc[row,'AP26']>=2 and df_global.loc[row,'AP26']<=4)]
+    #     if sum(check_list3)>=4:
+    #         df_global.drop(row,inplace=True)
+    #     else:
+    #         pass 
+        
+    else:
+        df_global.drop(row,inplace=True)
+
+
+
+nom = df_global.loc[:,['Resp_Id','Resp_name','Interviewer','AP25','AP19','AP20','AP21','AP22','AP23', 'AP24' , 'AP26']]
+
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+#df_empty = pd.DataFrame()   
+ #empty dataframe
+
+#df_empty.to_csv(output,mode='a', index=True)
+# Ax.to_csv(output, index=False, header=False) 
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+
+
+
+
+
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+
+
+
+
+
+
+
+
+# Error7 : Relation between AP28 & AP25,27']
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+Error_n = ['Error7 :-    Relation between AP28 & AP25,27' ]
+
+
+limit1 = [1,2]
+limit2 = [4,5]
+limit3 = [8,9,10]
+limit4 = [1,2,3,4,5,6]
+
+
+filt1=df_global.loc[(df_global['AP28'].isin(limit1)) & (df_global['AP27'].isin(limit2)) & (df_global['AP25'].isin(limit3))] 
+filt2= df_global.loc[(df_global['AP28'].isin(limit2)) & (df_global['AP27'].isin(limit1)) & (df_global['AP25'].isin(limit4))]
+
+nom = filt1[['Resp_Id','Resp_name','Interviewer','AP25','AP27','AP28']]
+nom2= filt2[['Resp_Id','Resp_name','Interviewer','AP25','AP27','AP28']]
+
+nom=nom._append(nom2)
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+#df_empty = pd.DataFrame()   
+ #empty dataframe
+
+#df_empty.to_csv(output,mode='a', index=True)
+# Ax.to_csv(output, index=False, header=False) 
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+
+
+
+
+
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Now starts for XP
+
+
+
+
+# Error8 : Relation between BP2 & BP5, BP6, BP7, BP8, BP9 
+
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+Error_n = ['Error8 :-    Relation between BP2 & BP5, BP6, BP7, BP8, BP9 ']
+
+
+for row in range(len(df_global)):
+    if df_global.loc[row,'BP2']>=1 and df_global.loc[row,'BP2']<=6:
+        check_list = [(df_global.loc[row,'BP5']>=1 and df_global.loc[row,'BP5']<=2) , (df_global.loc[row,'BP6']>=1 and df_global.loc[row,'BP6']<=2) , (df_global.loc[row,'BP7']>=1 and df_global.loc[row,'BP7']<=2) , (df_global.loc[row,'BP8']>=1 and df_global.loc[row,'BP8']<=2)]
+        if sum(check_list)>=3:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,'BP2']>=8 and df_global.loc[row,'BP2']<=10:
+        check_list2 = [(df_global.loc[row,'BP5']>=4 and df_global.loc[row,'BP5']<=5) , (df_global.loc[row,'BP6']>=4 and df_global.loc[row,'BP6']<=5) , (df_global.loc[row,'BP7']>=4 and df_global.loc[row,'BP7']<=5) , (df_global.loc[row,'BP8']>=4 and df_global.loc[row,'BP8']<=5)]
+        if sum(check_list2)>=3:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,'BP2']==7:
+        check_list3 = [(df_global.loc[row,'BP5']>=2 and df_global.loc[row,'BP5']<=4) , (df_global.loc[row,'BP6']>=2 and df_global.loc[row,'BP6']<=4) , (df_global.loc[row,'BP7']>=2 and df_global.loc[row,'BP7']<=4) , (df_global.loc[row,'BP8']>=2 and df_global.loc[row,'BP8']<=4)]
+        if sum(check_list3)>=3:
+            df_global.drop(row,inplace=True)
+        else:
+            pass 
+        
+    else:
+        df_global.drop(row,inplace=True)
+
+
+
+nom = df_global.loc[:,['Resp_Id','Resp_name','Interviewer','BP2','BP5','BP6','BP7','BP8','BP9']]
+
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+#df_empty = pd.DataFrame()   
+ #empty dataframe
+
+#df_empty.to_csv(output,mode='a', index=True)
+# Ax.to_csv(output, index=False, header=False) 
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+
+
+
+
+
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+
+
+
+
+
+
+
+
+
+
+
+# Error9 : Relation between BP2 & BP15
+
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+Error_n = ['Error9 :-    Relation between BP2 & BP15']
+
+for row in range(len(df_global)):
+    if df_global.loc[row,'BP2']>=1 and df_global.loc[row,'BP2']<=6:
+        
+        if df_global.loc[row,'BP15']<=2:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,'BP2']>=8 and df_global.loc[row,'BP2']<=10:
+        
+        if df_global.loc[row,'BP15']>=4:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,'BP2']==7:
+        
+        if (df_global.loc[row,'BP15']>=2 and df_global.loc[row,'BP15']<=4):
+            df_global.drop(row,inplace=True)
+        else:
+            pass 
+        
+    else:
+        df_global.drop(row,inplace=True)
+
+
+
+nom = df_global.loc[:,['Resp_Id','Resp_name','Interviewer','BP2','BP15']]
+
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+#df_empty = pd.DataFrame()   
+ #empty dataframe
+
+#df_empty.to_csv(output,mode='a', index=True)
+# Ax.to_csv(output, index=False, header=False) 
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+
+
+
+
+
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Error10 : Relation between BP2 & BP18 
+
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+Error_n = ['Error10 :-    Relation between BP2 & BP18 ']
+
+
+for row in range(len(df_global)):
+    if df_global.loc[row,'BP2']>=1 and df_global.loc[row,'BP2']<=6:
+        check_list = [(df_global.loc[row,'T_BP18_1']>=1 and df_global.loc[row,'T_BP18_1']<=2) , (df_global.loc[row,'T_BP18_2']>=1 and df_global.loc[row,'T_BP18_2']<=2) , (df_global.loc[row,'T_BP18_3']>=1 and df_global.loc[row,'T_BP18_3']<=2) , (df_global.loc[row,'T_BP18_4']>=1 and df_global.loc[row,'T_BP18_4']<=2)  , (df_global.loc[row,'T_BP18_5']>=1 and df_global.loc[row,'T_BP18_5']<=2)  , (df_global.loc[row,'T_BP18_6']>=1 and df_global.loc[row,'T_BP18_6']<=2)  , (df_global.loc[row,'T_BP18_7']>=1 and df_global.loc[row,'T_BP18_7']<=2)]
+        if sum(check_list)>=4:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,'BP2']>=8 and df_global.loc[row,'BP2']<=10:
+        check_list2 = [(df_global.loc[row,'T_BP18_1']>=4 and df_global.loc[row,'T_BP18_1']<=5) , (df_global.loc[row,'T_BP18_2']>=4 and df_global.loc[row,'T_BP18_2']<=5) , (df_global.loc[row,'T_BP18_3']>=4 and df_global.loc[row,'T_BP18_3']<=5) , (df_global.loc[row,'T_BP18_4']>=4 and df_global.loc[row,'T_BP18_4']<=5)  , (df_global.loc[row,'T_BP18_5']>=4 and df_global.loc[row,'T_BP18_5']<=5)  , (df_global.loc[row,'T_BP18_6']>=4 and df_global.loc[row,'T_BP18_6']<=5)  , (df_global.loc[row,'T_BP18_7']>=4 and df_global.loc[row,'T_BP18_7']<=5)]
+        if sum(check_list2)>=4:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,'BP2']==7:
+        check_list3 = [(df_global.loc[row,'T_BP18_1']>=2 and df_global.loc[row,'T_BP18_1']<=4) , (df_global.loc[row,'T_BP18_2']>=2 and df_global.loc[row,'T_BP18_2']<=4) , (df_global.loc[row,'T_BP18_3']>=2 and df_global.loc[row,'T_BP18_3']<=4) , (df_global.loc[row,'T_BP18_4']>=2 and df_global.loc[row,'T_BP18_4']<=4)  , (df_global.loc[row,'T_BP18_5']>=2 and df_global.loc[row,'T_BP18_5']<=4)  , (df_global.loc[row,'T_BP18_6']>=2 and df_global.loc[row,'T_BP18_6']<=4)  , (df_global.loc[row,'T_BP18_7']>=2 and df_global.loc[row,'T_BP18_7']<=4)]
+        if sum(check_list3)>=4:
+            df_global.drop(row,inplace=True)
+        else:
+            pass 
+        
+    else:
+        df_global.drop(row,inplace=True)
+
+
+
+nom = df_global.loc[:,['Resp_Id','Resp_name','Interviewer','BP2','T_BP18_1','T_BP18_2','T_BP18_3','T_BP18_4','T_BP18_5', 'T_BP18_6' , 'T_BP18_7']]
+
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+#df_empty = pd.DataFrame()   
+ #empty dataframe
+
+#df_empty.to_csv(output,mode='a', index=True)
+# Ax.to_csv(output, index=False, header=False) 
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+
+
+
+
+
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+
+
+
+
+
+
+
+# Error11 : Relation  between BP25 & BP19, BP20, BP21, BP22, BP23, BP24, BP26  
+
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+Error_n = ['Error11 :-    Relation between BP25 & BP19, BP20, BP21, BP22, BP23, BP24, BP26 ']
+
+
+for row in range(len(df_global)):
+    if df_global.loc[row,'BP25']>=1 and df_global.loc[row,'BP25']<=6:
+        check_list = [(df_global.loc[row,'BP19']!=3) , (df_global.loc[row,'BP20']!=3) , (df_global.loc[row,'BP21']>=1 and df_global.loc[row,'BP21']<=2) , (df_global.loc[row,'BP22']!=3)  , (df_global.loc[row,'BP23']!=3)  , (df_global.loc[row,'BP24']!=3)  , (df_global.loc[row,'BP26']>=1 and df_global.loc[row,'BP26']<=2)]
+        if sum(check_list)>=4:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    elif df_global.loc[row,'BP25']>=8 and df_global.loc[row,'BP25']<=10:
+        check_list2 = [(df_global.loc[row,'BP19']==3) , (df_global.loc[row,'BP20']==3) , (df_global.loc[row,'BP21']>=4 and df_global.loc[row,'BP21']<=5) , (df_global.loc[row,'BP22']==3)  , (df_global.loc[row,'BP23']==3)  , (df_global.loc[row,'BP24']==3)  , (df_global.loc[row,'BP26']>=4 and df_global.loc[row,'BP26']<=5)]
+        if sum(check_list2)>=4:
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+    # elif df_global.loc[row,'AP25']==7:
+    #     check_list3 = [(df_global.loc[row,'AP19']>=2 and df_global.loc[row,'AP19']<=4) , (df_global.loc[row,'AP20']>=2 and df_global.loc[row,'AP20']<=4) , (df_global.loc[row,'AP21']>=2 and df_global.loc[row,'AP21']<=4) , (df_global.loc[row,'AP22']>=2 and df_global.loc[row,'AP22']<=4)  , (df_global.loc[row,'AP23']>=2 and df_global.loc[row,'AP23']<=4)  , (df_global.loc[row,'AP24']>=2 and df_global.loc[row,'AP24']<=4)  , (df_global.loc[row,'AP26']>=2 and df_global.loc[row,'AP26']<=4)]
+    #     if sum(check_list3)>=4:
+    #         df_global.drop(row,inplace=True)
+    #     else:
+    #         pass 
+        
+    else:
+        df_global.drop(row,inplace=True)
+
+
+
+nom = df_global.loc[:,['Resp_Id','Resp_name','Interviewer','BP25','BP19','BP20','BP21','BP22','BP23', 'BP24' , 'BP26']]
+
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+#df_empty = pd.DataFrame()   
+ #empty dataframe
+
+#df_empty.to_csv(output,mode='a', index=True)
+# Ax.to_csv(output, index=False, header=False) 
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+
+
+
+
+
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+
+
+
+
+
+
+
+
+# Error12 : Relation between BP28 & BP25,27']
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+Error_n = ['Error12 :-    Relation between BP28 & BP25,27' ]
+
+
+limit1 = [1,2]
+limit2 = [4,5]
+limit3 = [8,9,10]
+limit4 = [1,2,3,4,5,6]
+
+
+filt1=df_global.loc[(df_global['BP28'].isin(limit1)) & (df_global['BP27'].isin(limit2)) & (df_global['BP25'].isin(limit3))] 
+filt2= df_global.loc[(df_global['BP28'].isin(limit2)) & (df_global['BP27'].isin(limit1)) & (df_global['BP25'].isin(limit4))]
+
+nom = filt1[['Resp_Id','Resp_name','Interviewer','BP25','BP27','BP28']]
+nom2= filt2[['Resp_Id','Resp_name','Interviewer','BP25','BP27','BP28']]
+
+nom=nom._append(nom2)
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+#df_empty = pd.DataFrame()   
+ #empty dataframe
+
+#df_empty.to_csv(output,mode='a', index=True)
+# Ax.to_csv(output, index=False, header=False) 
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+
+
+
+
+
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+
+
+
+
+
+
+
+
+# Error13 : Relation between AP2, BP2 & G1']
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+Error_n = ['Error13 :-    Relation between G1 & AP2, BP2, AP25, BP25' ]
+
+
+for row in range(len(df_global)):
+    if df_global.loc[row,'G1']==1 :
+        checklist1=[(df_global.loc[row,'AP2']>df_global.loc[row,'BP2']) , (df_global.loc[row,'AP25']>df_global.loc[row,'BP25'])]
+        if ((sum(checklist1)>=2) | ((df_global.loc[row,'AP2']>df_global.loc[row,'BP2']) & (df_global.loc[row,'AP25']>=df_global.loc[row,'BP25'])) | ((df_global.loc[row,'AP2']>=df_global.loc[row,'BP2']) & (df_global.loc[row,'AP25']>df_global.loc[row,'BP25']))):
+            df_global.drop(row,inplace=True)
+        
+        else:
+            pass
+    elif df_global.loc[row,'G1']==2 :
+        checklist2=[(df_global.loc[row,'AP2']<df_global.loc[row,'BP2']) , (df_global.loc[row,'AP25']<df_global.loc[row,'BP25'])]
+        if ((sum(checklist2)>=2) | ((df_global.loc[row,'AP2']<df_global.loc[row,'BP2']) & (df_global.loc[row,'AP25']<=df_global.loc[row,'BP25'])) | ((df_global.loc[row,'AP2']<=df_global.loc[row,'BP2']) & (df_global.loc[row,'AP25']<df_global.loc[row,'BP25']))):  
+            df_global.drop(row,inplace=True) 
+          
+        else:
+            pass
+    elif df_global.loc[row,'G1']==3:
+        checklist3=[(df_global.loc[row,'AP2']==df_global.loc[row,'BP2']) , (df_global.loc[row,'AP25']==df_global.loc[row,'BP25'])]
+        if sum(checklist2)>=2 :
+            df_global.drop(row,inplace=True) 
+          
+        else:
+            pass
+        
+    else:
+        pass
+    
+
+
+nom = df_global.loc[:,['Resp_Id','Resp_name','Interviewer','G1', 'AP2', 'BP2', 'AP25', 'BP25']]
+
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+#df_empty = pd.DataFrame()   
+ #empty dataframe
+
+#df_empty.to_csv(output,mode='a', index=True)
+# Ax.to_csv(output, index=False, header=False) 
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+
+
+
+
+
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+
+
+
+
+
+
+
+# Error14 : Relation between K11 & K1 , K4']
+
+
+input_file = r'D:\Input\Cigarette\Stick_test\3. Stick 1 - Vijayawada-May-24_2024_16_05_20_54.xlsx'
+input_sheet = 'Sheet1'
+output_path = r'D:\Input\Python exp\Sticktest_2.csv'
+
+
+df = pd.read_excel(input_file,input_sheet)
+
+df_global=df.copy()
+
+Error_n = ['Error13 :-    Relation between  K11 & K1 ']
+
+
+for row in range(len(df_global)):
+    if df_global.loc[row,'K11']==1 :
+        
+        if (df_global.loc[row,'T_K1_1'] > df_global.loc[row,'T_K1_2'])  :
+            df_global.drop(row,inplace=True)
+        else:
+            pass
+        
+    elif df_global.loc[row,'K11']==2 :
+        if (df_global.loc[row,'T_K1_1'] < df_global.loc[row,'T_K1_2']) :
+            df_global.drop(row,inplace=True) 
+        else:
+            pass    
+        
+    elif df_global.loc[row,'K11']==3:
+        if (df_global.loc[row,'T_K1_1'] == df_global.loc[row,'T_K1_2']) :
+            df_global.drop(row,inplace=True) 
+        
+        
+        else:
+            pass
+        
+    else:
+        pass
+    
+
+
+nom = df_global.loc[:,['Resp_Id','Resp_name','Interviewer','K11','T_K1_1','T_K1_2']]
+
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+  
+#df_empty = pd.DataFrame()   
+ #empty dataframe
+
+#df_empty.to_csv(output,mode='a', index=True)
+# Ax.to_csv(output, index=False, header=False) 
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+
+
+
+
+
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+
