@@ -1099,7 +1099,7 @@ Valuecount.to_csv(output_path, mode='a', index=True, )
 
 
 
-# Error14 : Relation between K11 & K1 , K4']
+# Error14 : Relation between K11 & K1 ']
 
 
 
