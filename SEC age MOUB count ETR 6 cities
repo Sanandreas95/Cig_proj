@@ -1,0 +1,330 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+input_file = r'D:\Input\Cigarette\6 cities\Data\3.Edition Trio Post lunch-2 -08-Jul-24_2024_22_07_18_07.xlsx'
+input_sheet = 'Sheet1'
+output_path = r'D:\Input\Python exp\1_Bhubneshwarcount.csv'
+
+
+
+
+df = pd.read_excel(input_file,input_sheet)
+df=df[df['Q2'] == 6]
+
+
+
+# Count:SEC count 
+
+
+
+
+
+
+
+
+Error_n = ['Count:SEC count']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+
+
+
+
+
+
+
+# Count1 : SEC count 
+
+
+
+df_global=df.copy()
+
+Error_n = ['SEC count ']
+
+
+df_s = df_global['SEC_Q'].value_counts()
+
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+
+
+
+
+
+
+
+
+
+# Count2 : Age count
+
+
+
+df_global=df.copy()
+df_global.reset_index(drop=True, inplace=True)
+
+df_global['Q6'] = pd.to_numeric(df_global['Q6'], errors='coerce')
+
+Error_n = ['Age count ']
+
+
+
+
+
+
+def categorize_scores(score):
+    
+    if 21<=score <= 25:
+        return '21-25'
+    elif 26 <= score <= 30:
+        return '26-30'
+    elif 31<=score <= 35:
+        return '31-35'
+    elif 36<=score<=40:
+        return '36-40'
+    else:
+        return 'Other'
+    
+    
+df_global['Age'] = df_global['Q6'].apply(categorize_scores)   
+    
+# counts_p = df['Age'].value_counts().rename('Q6')    
+    
+    
+    
+
+# df['Box1'] = df['AP2'].apply(categorize_scores)
+# df['Box2'] = df['BP2'].apply(categorize_scores)
+
+
+# # Calculate value counts for each column
+
+
+
+counts_p = df_global['Age'].value_counts()
+
+
+Valuecount=pd.DataFrame(counts_p)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+
+
+
+
+
+
+# Count3 : MOUB count
+
+df_global=df.copy()
+
+Error_n = ['MOUB count ']
+
+
+
+counts_p = df['Q21'].value_counts()
+
+
+Valuecount=pd.DataFrame(counts_p)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+
+
+
+
+
+# Count4:Age wise brands 
+
+
+
+df_global=df.copy()
+
+Error_n = ['Count4:Age wise brands ']
+
+df_global.reset_index(drop=True, inplace=True)
+
+
+
+
+df_global['Q6'] = pd.to_numeric(df_global['Q6'], errors='coerce')
+
+
+
+
+
+
+
+def categorize_scores(score):
+    
+    if 21<=score <= 25:
+        return '21-25'
+    elif 26 <= score <= 30:
+        return '26-30'
+    elif 31<=score <= 35:
+        return '31-35'
+    elif 36<=score<=40:
+        return '36-40'
+    else:
+        return 'Other'
+    
+    
+df_global['Age'] = df_global['Q6'].apply(categorize_scores)   
+
+
+
+
+df_modified = df_global.loc[:,['Q21','Age']]
+
+crosstab_result = pd.crosstab(df_modified['Age'], df_modified['Q21'])
+
+
+
+# dynamic_headers = [f'brands{i}' for i in range(1, len(crosstab_result.columns) + 1)]
+
+count1=pd.DataFrame(crosstab_result )
+
+# count1.columns = [column_header.rjust(20, ' ') for column_header in count1.columns]
+
+# Sum_name=pd.DataFrame(df_s)
+
+
+
+df_empty= pd.DataFrame()  
+
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+count1.to_csv(output_path, mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+# df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+
+
+
+
+
+
+
+
+
+
+# Count4:SEC wise brands 
+
+
+
+
+df_global=df.copy()
+
+Error_n = ['Count4:SEC wise brands  ']
+
+df_global.reset_index(drop=True, inplace=True)
+
+
+
+
+
+
+
+df_modified = df_global.loc[:,['Q21','SEC_Q']]
+
+crosstab_result = pd.crosstab(df_modified['SEC_Q'], df_modified['Q21'])
+
+
+
+# dynamic_headers = [f'brands{i}' for i in range(1, len(crosstab_result.columns) + 1)]
+
+count1=pd.DataFrame(crosstab_result )
+
+# count1.columns = [column_header.rjust(20, ' ') for column_header in count1.columns]
+
+# Sum_name=pd.DataFrame(df_s)
+
+
+
+df_empty= pd.DataFrame()  
+
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+count1.to_csv(output_path, mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+# df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
