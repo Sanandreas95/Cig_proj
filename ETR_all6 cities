@@ -1,4 +1,4 @@
-# Patna 2nd raw
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -7,15 +7,15 @@ import matplotlib.pyplot as plt
 
 
 # Sample data
-input_file = r'D:\Input\Cigarette\6 cities\Data\4.Edition Trio Post lunch-2 -08-Jul-24_2024_23_07_11_27.xlsx'
-input_sheet = 'Sheet2'
-output_path = r'D:\Input\Python exp\2_Lucknowerror.csv'
+input_file = r'D:\Input\Cigarette\6 cities\Data\23.Edition Trio Post lunch-2 -08-Jul-24_2024_05_08_11_37.xlsx'
+input_sheet = 'Sheet1'
+output_path = r'D:\Input\Cigarette\6 cities\Feedback\Error_python\14_Bhubneshwarfeedbackerror.csv'
 
 
 
 
 df = pd.read_excel(input_file,input_sheet)
-df=df[df['Q2'] == 5]
+df=df[df['Q2'] == 6]
 
 
 
@@ -23,30 +23,39 @@ df=df[df['Q2'] == 5]
 
 
 
-# Error1:Smoking age greater than 25 yrs
-# Error2:frequency of number of brands selected  by each interviewer in spontaneous awareness(Q14)
-# Error3 : Q27 - 80% loose buyers
-# Error4 : QB1 - when did you first hear about Editions trio 
-# Error5 : QB2 - Sources of editions trio awareness 
-# Error6 : QB3 - Knowledge of features of Editions trio
-# Error7 : QB8 - Frequency of Price to be , for 1 cig of Rs 10 
-# Error8 : QC1 - Frequency of when first smoked editoins trio
-# Error9 : QC2 - Frequency of rating for It offers good smoking experience
-# Error10 : QC2 - Frequency of rating for Pleasantness of taste of the capsule flavour
-# Error11 : QC3 - Likelihood to purchase editions trio in next 1-3 months
-# Error12 : Q14.1 Frequency of newly launched brands
-# Error13 : Q24 Price fluctuation between regular and previous regular 
-# Error14 : Q26 Price fluctuation between regular and alternate regular 
-# Error15 : Regular brand(q21)  not in First preference (Q25)
-# Error16 : Alternate regular  brand(q26)  not in any preference (Q25) 
-# Error17 : Q26 Price fluctuation between all 3 preferred brand 
-# Error18: Frequency of number of brands selected  by each interviewer in aided awareness(Q15)
-# Error19: Frequency of number of brands selected  by each interviewer in ever smoked(Q16)
-# Error20: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 year(Q18)
-# Error21: Frequency of number of brands selected  by each interviewer in ever smoked in last 3 months(Q19)
-# Error22: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 weeks(Q20)
-# Error23: Regular  brand(q26)  not in any preference (Q21)
-# Error24: Regular brand not in TOM  or spont
+# Error1 : Q27 - 80% loose buyers
+# Error2:Smoking age greater than 25 yrs
+# Error3:frequency of number of brands selected  by each interviewer in spontaneous awareness(Q14)
+# Error4 : Q14.1 Frequency of newly launched brands
+# Error5: Regular brand not in TOM  
+# Error6: Regular brand not in TOM  or spont
+# Error7 : Regular brand(q21)  not in First preference (Q25)
+# Error8: Regular  brand(q26)  not in any preference (Q21)
+# Error9 : Alternate regular  brand(q26)  not in any preference (Q25) 
+# Error10 : Q24 Price fluctuation between regular and previous regular 
+# Error11 : Q26 Price fluctuation between regular and alternate regular 
+# Error12 : Q25 Price fluctuation between all 3 preferred brand 
+# Error13: Frequency of number of brands selected  by each interviewer in aided awareness(Q15)
+# Error14: Frequency of number of brands selected  by each interviewer in ever smoked(Q16)
+# Error15: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 year(Q18)
+# Error16: Frequency of number of brands selected  by each interviewer in ever smoked in last 3 months(Q19)
+# Error17: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 weeks(Q20)
+# Error18: QB1 - when did you first hear about Editions trio 
+# Error19: QB2 - Sources of editions trio awareness 
+# Error20: QB3 - Knowledge of features of Editions trio
+# Error21: QB4 - What kind of cigarette Editions trio is
+# Error22: QB5 - Flavour of this cigarette
+# Error23: QB6 - Colour of Editions Trio pack
+# Error24: QB7 - Price of 1 stick of Editions trio
+# Error25: QB8 - Frequency of Price to be , for 1 cig of Rs 10 
+# Error26: QC1 - Frequency of when first smoked editoins trio
+# Error27: QC2 - Frequency of rating for It offers good smoking experience
+# Error28 : QC2 - Frequency of rating for Pleasantness of taste of the capsule flavour
+# Error29 : QC3 - Likelihood to purchase editions trio in next 1-3 months
+# Error30 : QD1 - Have you seen this cigarette brand
+# Error31 : QD2- Name of the Brand of this Cigarette
+# Error32 : QE2- What strength of cigarette do you prefer
+# Error33 : QE3-Do you consider this cigarette brand to be
 
 
 
@@ -55,126 +64,162 @@ df=df[df['Q2'] == 5]
 
 
 
-Error_n = ['Error1 :-    Smoking age greater than 25 yrs ']
+Error_n = ['Error1 : Q27 - 80% loose buyers']
 df_name= pd.DataFrame(Error_n) 
 df_name.to_csv(output_path,index=False, header=False)
  
-Error_n = ['Error2 :-    frequency of number of brands selected  by each interviewer in spontaneous awareness(Q14)']
+Error_n = ['Error2:Smoking age greater than 25 yrs']
 df_name= pd.DataFrame(Error_n) 
 df_name.to_csv(output_path,mode='a',index=False, header=False)
 
-Error_n = ['Error3 :-   Q27 - 80% loose buyers']
-df_name= pd.DataFrame(Error_n) 
-df_name.to_csv(output_path,mode='a',index=False, header=False)
-
-
-Error_n = ['Error4 : QB1 - when did you first hear about Editions trio ']
+Error_n = ['Error3:frequency of number of brands selected  by each interviewer in spontaneous awareness(Q14)']
 df_name= pd.DataFrame(Error_n) 
 df_name.to_csv(output_path,mode='a',index=False, header=False)
 
 
-
-Error_n = ['Error5 : QB2 - Sources of editions trio awareness  ']
-df_name= pd.DataFrame(Error_n) 
-df_name.to_csv(output_path,mode='a',index=False, header=False)
-
-
-Error_n = ['Error6 : QB3 - Knowledge of features of Editions trio   ']
-df_name= pd.DataFrame(Error_n) 
-df_name.to_csv(output_path,mode='a',index=False, header=False)
-
-Error_n = ['Error7 : QB8 - Frequency of Price to be , for 1 cig of Rs 10   ']
-df_name= pd.DataFrame(Error_n) 
-df_name.to_csv(output_path,mode='a',index=False, header=False)
-
-Error_n = ['Error8 : QC1 - Frequency of when first smoked editoins trio   ']
-df_name= pd.DataFrame(Error_n) 
-df_name.to_csv(output_path,mode='a',index=False, header=False)
-
-Error_n = ['Error9 : QC2 - Frequency of rating for It offers good smoking experience  ']
-df_name= pd.DataFrame(Error_n) 
-df_name.to_csv(output_path,mode='a',index=False, header=False)
-
-Error_n = ['Error10 : QC2 - Frequency of rating for Pleasantness of taste of the capsule flavour']
-df_name= pd.DataFrame(Error_n) 
-df_name.to_csv(output_path,mode='a',index=False, header=False)
-
-Error_n = ['Error11 : QC3 - Likelihood to purchase editions trio in next 1-3 months']
-df_name= pd.DataFrame(Error_n) 
-df_name.to_csv(output_path,mode='a',index=False, header=False)
-
-Error_n = ['Error12 : Q14.1 Frequency of newly launched brands']
-df_name= pd.DataFrame(Error_n) 
-df_name.to_csv(output_path,mode='a',index=False, header=False)
-
-
-Error_n = ['Error13 : Q24 Price fluctuation between regular and previous regular  ']
-df_name= pd.DataFrame(Error_n) 
-df_name.to_csv(output_path,mode='a',index=False, header=False)
-
-
-Error_n = ['Error14 : Q26 Price fluctuation between regular and alternate regular  ']
+Error_n = ['Error4 : Q14.1 Frequency of newly launched brands']
 df_name= pd.DataFrame(Error_n) 
 df_name.to_csv(output_path,mode='a',index=False, header=False)
 
 
 
-Error_n = ['Error15 : Regular brand(q21)  not in First preference (Q25)  ']
+Error_n = ['Error5: Regular brand not in TOM ']
 df_name= pd.DataFrame(Error_n) 
 df_name.to_csv(output_path,mode='a',index=False, header=False)
 
 
-Error_n = ['Error16 : Alternate regular  brand(q26)  not in any preference (Q25)  ']
+Error_n = ['Error6: Regular brand not in TOM  or spont   ']
 df_name= pd.DataFrame(Error_n) 
 df_name.to_csv(output_path,mode='a',index=False, header=False)
 
-Error_n = ['Error17 : Q26 Price fluctuation between all 3 preferred brand   ']
+Error_n = ['Error7 : Regular brand(q21)  not in First preference (Q25) ']
 df_name= pd.DataFrame(Error_n) 
 df_name.to_csv(output_path,mode='a',index=False, header=False)
 
-Error_n = ['Error18: Frequency of number of brands selected  by each interviewer in aided awareness(Q15)   ']
+Error_n = ['Error8: Regular  brand(q26)  not in any preference (Q21)   ']
 df_name= pd.DataFrame(Error_n) 
 df_name.to_csv(output_path,mode='a',index=False, header=False)
 
-Error_n = ['Error19:Frequency of number of brands selected  by each interviewer in ever smoked(Q16) ']
+Error_n = ['Error9 : Alternate regular  brand(q26)  not in any preference (Q25)  ']
 df_name= pd.DataFrame(Error_n) 
 df_name.to_csv(output_path,mode='a',index=False, header=False)
 
-Error_n = ['Error20: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 year(Q18)']
-df_name= pd.DataFrame(Error_n) 
-df_name.to_csv(output_path,mode='a',index=False, header=False)
-
-
-Error_n = ['Error21: Frequency of number of brands selected  by each interviewer in ever smoked in last 3 months(Q19)']
-df_name= pd.DataFrame(Error_n) 
-df_name.to_csv(output_path,mode='a',index=False, header=False)
-
-
-Error_n = ['Error22: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 weeks(Q20)']
-df_name= pd.DataFrame(Error_n) 
-df_name.to_csv(output_path,mode='a',index=False, header=False)
-
-
-Error_n = ['Error23: Regular  brand(q21)  not in any preference (Q25) ']
+Error_n = ['Error10 : Q24 Price fluctuation between regular and previous regular ']
 df_name= pd.DataFrame(Error_n) 
 df_name.to_csv(output_path,mode='a',index=False, header=False)
 
 
 
+Error_n = ['Error11 : Q26 Price fluctuation between regular and alternate regular ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
 
-Error_n = ['Error24: Regular brand not in TOM  or spont']
+Error_n = ['Error12 : Q25 Price fluctuation between all 3 preferred brand ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+
+Error_n = ['Error13: Frequency of number of brands selected  by each interviewer in aided awareness(Q15) ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+
+Error_n = ['Error14: Frequency of number of brands selected  by each interviewer in ever smoked(Q16) ']
 df_name= pd.DataFrame(Error_n) 
 df_name.to_csv(output_path,mode='a',index=False, header=False)
 
 
 
-Error_n = ['Error25 : Error25: Regular brand not in TOM   ']
+Error_n = ['Error15: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 year(Q18)  ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+
+Error_n = ['Error16: Frequency of number of brands selected  by each interviewer in ever smoked in last 3 months(Q19) ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+
+
+Error_n = ['Error17: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 weeks(Q20)   ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+Error_n = ['Error18: QB1 - when did you first hear about Editions trio  ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+Error_n = ['Error19: QB2 - Sources of editions trio awareness ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+Error_n = ['Error20: QB3 - Knowledge of features of Editions trio']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+
+Error_n = ['Error21: QB4 - What kind of cigarette Editions trio is']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+
+Error_n = ['Error22: QB5 - Flavour of this cigarette']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+
+Error_n = ['Error23: QB6 - Colour of Editions Trio pack']
 df_name= pd.DataFrame(Error_n) 
 df_name.to_csv(output_path,mode='a',index=False, header=False)
 
 
 
 
+Error_n = ['Error24: QB7 - Price of 1 stick of Editions trio']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+
+
+Error_n = ['Error25: QB8 - Frequency of Price to be , for 1 cig of Rs 10   ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+
+Error_n = ['Error26: QC1 - Frequency of when first smoked editoins trio  ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+Error_n = ['Error27: QC2 - Frequency of rating for It offers good smoking experience  ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+Error_n = ['Error28 : QC2 - Frequency of rating for Pleasantness of taste of the capsule flavour  ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+Error_n = ['Error29 : QC3 - Likelihood to purchase editions trio in next 1-3 months  ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+Error_n = ['Error30 : QD1 - Have you seen this cigarette brand  ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+
+Error_n = ['Error31 : QD2- Name of the Brand of this Cigarette   ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+
+Error_n = ['Error32 : QE2- What strength of cigarette do you prefer   ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
+
+
+Error_n = ['Error33 : QE3-Do you consider this cigarette brand to be  ']
+df_name= pd.DataFrame(Error_n) 
+df_name.to_csv(output_path,mode='a',index=False, header=False)
 
 
 
@@ -185,10 +230,80 @@ df_name.to_csv(output_path,mode='a',index=False, header=False)
 
 
 
-# Error1 : Smoking age greater than 25 yrs
 
 
-Error_n = ['Error1 :-    Smoking age greater than 25 yrs ']
+
+
+# Error1 : Q27 - 80% loose buyers
+
+Error_n = ['Error1 : Q27 - 80% loose buyers']
+
+df_global=df.copy()
+df_s=df_global['Q27'].value_counts()
+
+df_percent = df_global['Q27'].value_counts(normalize=True) * 100
+
+Df_buyers=pd.DataFrame(df_s)    
+Df_buyerspercen=pd.DataFrame(df_percent)   
+
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+Df_buyers.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Df_buyerspercen.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Error2 : Smoking age greater than 25 yrs
+
+
+
+
+Error_n = ['Error2 :-    Smoking age greater than 25 yrs ']
 
 df_global=df.copy()
 
@@ -240,13 +355,13 @@ Valuecount.to_csv(output_path, mode='a', index=True)
 
 
 
-# Error2:frequency of number of brands selected  by each interviewer in spontaneous awareness(Q14)
+# Error3:frequency of number of brands selected  by each interviewer in spontaneous awareness(Q14)
 
 
 
 df_global=df.copy()
 
-Error_n = ['Error2 :-    frequency of number of brands selected  by each interviewer in spontaneous awareness(Q14)']
+Error_n = ['Error3 :-    frequency of number of brands selected  by each interviewer in spontaneous awareness(Q14)']
 
 
 
@@ -295,393 +410,16 @@ count1.to_csv(output_path, mode='a', index=True)
 
 
 
-# Error3 : Q27 - 80% loose buyers
 
-Error_n = ['Error3 :-   Q27 - 80% loose buyers']
 
-df_global=df.copy()
-df_s=df_global['Q27'].value_counts()
 
-df_percent = df_global['Q27'].value_counts(normalize=True) * 100
 
-Df_buyers=pd.DataFrame(df_s)    
-Df_buyerspercen=pd.DataFrame(df_percent)   
+# Error4 : Q14.1 Frequency of newly launched brands
 
 
-df_empty= pd.DataFrame()  
 
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
 
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-
-
-Df_buyers.to_csv(output_path, mode='a', index=True)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-Df_buyerspercen.to_csv(output_path, mode='a', index=True)
-
-
-
-
-
-
-# Error4 : QB1 - when did you first hear about Editions trio 
-
-
-
-
-Error_n = ['Error4 : QB1 - when did you first hear about Editions trio ']
-
-
-
-df_global=df.copy()
-
-df_s=df_global['B1'].value_counts()
-
-df_percent = df_global['B1'].value_counts(normalize=True) * 100
-
-Df_buyers=pd.DataFrame(df_s)    
-Df_buyerspercen=pd.DataFrame(df_percent)   
-
-
-df_empty= pd.DataFrame()  
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-
-
-Df_buyers.to_csv(output_path, mode='a', index=True)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-Df_buyerspercen.to_csv(output_path, mode='a', index=True)
-
-
-
-
-# Error5 : QB2 - Sources of editions trio awareness 
-
-
-Error_n = ['Error5 : QB2 - Sources of editions trio awareness  ']
-
-
-df_global=df.copy()
-columns_to_sum = ['A_B2_1', 'A_B2_2', 'A_B2_3','A_B2_4','A_B2_5','A_B2_6','A_B2_7','A_B2_8']
-sums = df_global[columns_to_sum].sum()
-
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-
-
-sums.to_csv(output_path, mode='a', index=True)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-
-
-
-
-# Error6 : QB3 - Knowledge of features of Editions trio 
-
-
-
-Error_n = ['Error6 : QB3 - Knowledge of features of Editions trio   ']
-
-
-df_global=df.copy()
-columns_to_sum = ['A_B3_1_1', 'A_B3_1_2', 'A_B3_1_3','A_B3_1_4','A_B3_1_5','A_B3_1_6','A_B3_1_7','A_B3_1_8','A_B3_1_9']
-sums = df_global[columns_to_sum].sum()
-
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-
-
-sums.to_csv(output_path, mode='a', index=True)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-
-
-
-
-# Error7 : QB8 - Frequency of Price to be , for 1 cig of Rs 10 
-
-
-
-Error_n = ['Error7 : QB8 - Frequency of Price to be , for 1 cig of Rs 10   ']
-
-
-df_global=df.copy()
-
-
-
-df_s=df_global['B8'].value_counts()
-
-df_percent = df_global['B8'].value_counts(normalize=True) * 100
-
-Df_buyers=pd.DataFrame(df_s)    
-Df_buyerspercen=pd.DataFrame(df_percent)   
-
-
-df_empty= pd.DataFrame()  
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-
-
-Df_buyers.to_csv(output_path, mode='a', index=True)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-Df_buyerspercen.to_csv(output_path, mode='a', index=True)
-
-
-
-
-
-# Error8 : QC1 - Frequency of when first smoked editoins trio
-
-
-
-
-
-
-
-Error_n = ['Error8 : QC1 - Frequency of when first smoked editoins trio   ']
-
-
-df_global=df.copy()
-
-
-
-df_s=df_global['C1'].value_counts()
-
-df_percent = df_global['C1'].value_counts(normalize=True) * 100
-
-Df_buyers=pd.DataFrame(df_s)    
-Df_buyerspercen=pd.DataFrame(df_percent)   
-
-
-df_empty= pd.DataFrame()  
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-
-
-Df_buyers.to_csv(output_path, mode='a', index=True)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-Df_buyerspercen.to_csv(output_path, mode='a', index=True)
-
-
-
-
-# Error9 : QC2 - Frequency of rating for It offers good smoking experience
-
-
-
-
-
-
-Error_n = ['Error9 : QC2 - Frequency of rating for It offers good smoking experience  ']
-
-
-df_global=df.copy()
-
-
-
-df_s=df_global['T_C2_1'].value_counts()
-
-df_percent = df_global['T_C2_1'].value_counts(normalize=True) * 100
-
-Df_buyers=pd.DataFrame(df_s)    
-Df_buyerspercen=pd.DataFrame(df_percent)   
-
-
-df_empty= pd.DataFrame()  
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-
-
-Df_buyers.to_csv(output_path, mode='a', index=True)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-Df_buyerspercen.to_csv(output_path, mode='a', index=True)
-
-
-
-
-
-
-# Error10 : QC2 - Frequency of rating for Pleasantness of taste of the capsule flavour
-
-
-
-
-Error_n = ['Error10 : QC2 - Frequency of rating for Pleasantness of taste of the capsule flavour']
-
-
-df_global=df.copy()
-
-
-
-df_s=df_global['T_C2_2'].value_counts()
-
-df_percent = df_global['T_C2_2'].value_counts(normalize=True) * 100
-
-Df_buyers=pd.DataFrame(df_s)    
-Df_buyerspercen=pd.DataFrame(df_percent)   
-
-
-df_empty= pd.DataFrame()  
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-
-
-Df_buyers.to_csv(output_path, mode='a', index=True)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-Df_buyerspercen.to_csv(output_path, mode='a', index=True)
-
-
-
-
-
-
-
-
-
-
-# Error11 : QC3 - Likelihood to purchase editions trio in next 1-3 months
-
-
-
-
-
-Error_n = ['Error11 : QC3 - Likelihood to purchase editions trio in next 1-3 months']
-
-
-df_global=df.copy()
-
-
-
-df_s=df_global['C3'].value_counts()
-
-df_percent = df_global['C3'].value_counts(normalize=True) * 100
-
-Df_buyers=pd.DataFrame(df_s)    
-Df_buyerspercen=pd.DataFrame(df_percent)   
-
-
-df_empty= pd.DataFrame()  
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-
-
-Df_buyers.to_csv(output_path, mode='a', index=True)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-Df_buyerspercen.to_csv(output_path, mode='a', index=True)
-
-
-
-
-# Error12 : Q14.1 Frequency of newly launched brands
-
-
-
-
-Error_n = ['Error12 : Q14.1 Frequency of newly launched brands']
+Error_n = ['Error4 : Q14.1 Frequency of newly launched brands']
 
 
 
@@ -736,1124 +474,24 @@ count1.to_csv(output_path, mode='a', index=True)
 
 
 
-# Error13 : Q24 Price fluctuation between regular and previous regular 
-
-
-
-df_global=df.copy()
-# df_global.reset_index(drop=True, inplace=True)
-
-Error_n = ['Error13 : Q24 Price fluctuation between regular and previous regular  ']
-
-
-control_col=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148]
-
-
-cig_price={ 1:[120],
-            2:[100],
-            3:[165],
-            4:[0],
-            5:[40],
-            6:[40],
-            7:[48],
-            8:[0],
-            9:[80],
-            10:[65],
-            11:[40],
-            12:[47],
-            13:[65],
-            14:[48],
-            15:[43],
-            16:[0],
-            17:[40],
-            18:[40],
-            19:[0],
-            20:[40],
-            21:[48],
-            22:[0],
-            23:[165],
-            24:[150],
-            25:[165],
-            26:[165],
-            27:[165],
-            28:[100],
-            29:[0],
-            30:[50],
-            31:[50],
-            32:[60],
-            33:[51],
-            34:[70],
-            35:[0],
-            36:[90],
-            37:[89],
-            38:[89],
-            39:[89],
-            40:[85],
-            41:[55],
-            42:[89],
-            43:[0],
-            44:[200],
-            45:[100],
-            46:[100],
-            47:[95],
-            48:[165],
-            49:[165],
-            50:[165],
-            51:[95],
-            52:[150],
-            53:[95],
-            54:[95],
-            55:[95],
-            56:[95],
-            57:[95],
-            58:[60],
-            59:[50],
-            60:[59],
-            61:[59],
-            62:[0],
-            63:[180],
-            64:[45],
-            65:[0],
-            66:[165],
-            67:[100],
-            68:[95],
-            69:[60],
-            70:[165],
-            71:[330],
-            72:[0],
-            73:[165],
-            74:[95],
-            75:[165],
-            76:[0],
-            77:[47],
-            78:[49],
-            79:[0],
-            80:[95],
-            81:[59],
-            82:[80],
-            83:[50],
-            84:[50],
-            85:[94],
-            86:[40],
-            87:[60],
-            88:[0],
-            89:[70],
-            90:[70],
-            91:[80],
-            92:[55],
-            93:[0],
-            94:[55],
-            95:[55],
-            96:[55],
-            97:[0],
-            98:[47],
-            99:[69],
-            100:[58],
-            101:[0],
-            102:[49],
-            103:[45],
-            104:[49],
-            105:[0],
-            106:[50],
-            107:[50],
-            108:[80],
-            109:[45],
-            110:[50],
-            111:[58],
-            112:[100],
-            113:[120],
-            114:[58],
-            115:[0],
-            116:[100],
-            117:[100],
-            118:[0],
-            119:[54],
-            120:[60],
-            121:[60],
-            122:[60],
-            123:[60],
-            124:[60],
-            125:[70],
-            126:[60],
-            127:[70],
-            128:[60],
-            129:[70],
-            130:[75],
-            131:[100],
-            132:[160],
-            133:[0],
-            134:[60],
-            135:[60],
-            136:[60],
-            137:[60],
-            138:[80],
-            139:[47],
-            140:[0],
-            141:[95],
-            142:[110],
-            143:[95],
-            144:[50],
-            145:[70],
-            146:[60],
-            147:[95],
-            148:[68],
-            149:[70],
-            }
-
-df_global = df_global.dropna(subset=['Q24'])
-
-df_global.reset_index(drop=True, inplace=True)
-
-
-for df_row in range (len(df_global)):
-    # if (cig_price[df_global.loc[df_row,'Q21']][1])-(cig_price[df_global.loc[df_row,'Q24']][1])<=40 and (cig_price[df_global.loc[df_row,'Q21']][1])-(cig_price[df_global.loc[df_row,'Q24']][1])>=-40:
-    # if (cig_price[df_global.loc[df_row,'Q21']][1])-(cig_price[df_global.loc[df_row,'Q24']][1])<=40  :
-        
-    # print(cig_price[df_global.loc[df_row,'Q21']][0])
-    if (cig_price[df_global.loc[df_row,'Q21']][0])-(cig_price[df_global.loc[df_row,'Q24']][0])<=40 and (cig_price[df_global.loc[df_row,'Q21']][0])-(cig_price[df_global.loc[df_row,'Q24']][0])>=-40:
-    
-        df_global.drop(df_row,inplace=True)
-        # print(df_global.loc[:,['Q21','Q24','Q27']])
-    else:
-        pass
-    
-    
-df_modified = df_global.loc[:,['Respondent_ID','Resp_Name','Interviewer','Q21','Q24']]
-
-    
-df_empty= pd.DataFrame()  
-df_s = df_modified['Interviewer'].value_counts()
-    
-interviewererror=pd.DataFrame(df_s)    
-
-total_sum = interviewererror.sum()
-total_sum.name = 'Total'
-interviewererror = interviewererror._append(total_sum)
-interviewererror['Total']=interviewererror.sum(min_count=1,axis=1)
-   
-
-
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_modified.to_csv(output_path,mode='a', index=False)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-interviewererror.to_csv(output_path, mode='a', index=True, )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Error14 : Q26 Price fluctuation between regular and alternate regular 
-
-df_global=df.copy()
-df_global.reset_index(drop=True, inplace=True)
-
-Error_n = ['Error14 : Q26 Price fluctuation between regular and alternate regular   ']
-
-
-control_col=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148]
-
-
-cig_price={ 1:[120],
-            2:[100],
-            3:[165],
-            4:[0],
-            5:[40],
-            6:[40],
-            7:[48],
-            8:[0],
-            9:[80],
-            10:[65],
-            11:[40],
-            12:[47],
-            13:[65],
-            14:[48],
-            15:[43],
-            16:[0],
-            17:[40],
-            18:[40],
-            19:[0],
-            20:[40],
-            21:[48],
-            22:[0],
-            23:[165],
-            24:[150],
-            25:[165],
-            26:[165],
-            27:[165],
-            28:[100],
-            29:[0],
-            30:[50],
-            31:[50],
-            32:[60],
-            33:[51],
-            34:[70],
-            35:[0],
-            36:[90],
-            37:[89],
-            38:[89],
-            39:[89],
-            40:[85],
-            41:[55],
-            42:[89],
-            43:[0],
-            44:[200],
-            45:[100],
-            46:[100],
-            47:[95],
-            48:[165],
-            49:[165],
-            50:[165],
-            51:[95],
-            52:[150],
-            53:[95],
-            54:[95],
-            55:[95],
-            56:[95],
-            57:[95],
-            58:[60],
-            59:[50],
-            60:[59],
-            61:[59],
-            62:[0],
-            63:[180],
-            64:[45],
-            65:[0],
-            66:[165],
-            67:[100],
-            68:[95],
-            69:[60],
-            70:[165],
-            71:[330],
-            72:[0],
-            73:[165],
-            74:[95],
-            75:[165],
-            76:[0],
-            77:[47],
-            78:[49],
-            79:[0],
-            80:[95],
-            81:[59],
-            82:[80],
-            83:[50],
-            84:[50],
-            85:[94],
-            86:[40],
-            87:[60],
-            88:[0],
-            89:[70],
-            90:[70],
-            91:[80],
-            92:[55],
-            93:[0],
-            94:[55],
-            95:[55],
-            96:[55],
-            97:[0],
-            98:[47],
-            99:[69],
-            100:[58],
-            101:[0],
-            102:[49],
-            103:[45],
-            104:[49],
-            105:[0],
-            106:[50],
-            107:[50],
-            108:[80],
-            109:[45],
-            110:[50],
-            111:[58],
-            112:[100],
-            113:[120],
-            114:[58],
-            115:[0],
-            116:[100],
-            117:[100],
-            118:[0],
-            119:[54],
-            120:[60],
-            121:[60],
-            122:[60],
-            123:[60],
-            124:[60],
-            125:[70],
-            126:[60],
-            127:[70],
-            128:[60],
-            129:[70],
-            130:[75],
-            131:[100],
-            132:[160],
-            133:[0],
-            134:[60],
-            135:[60],
-            136:[60],
-            137:[60],
-            138:[80],
-            139:[47],
-            140:[0],
-            141:[95],
-            142:[110],
-            143:[95],
-            144:[50],
-            145:[70],
-            146:[60],
-            147:[95],
-            148:[68],
-            149:[70],
-
-            }
-
-
-
-df_global = df_global.dropna(subset=['Q24'])
-
-df_global.reset_index(drop=True, inplace=True)
-
-
-
-for df_row in range (len(df_global)):
-    if (cig_price[df_global.loc[df_row,'Q21']][0])-(cig_price[df_global.loc[df_row,'Q26']][0])<=40 and (cig_price[df_global.loc[df_row,'Q21']][0])-(cig_price[df_global.loc[df_row,'Q26']][0])>=-40:
-    
-        df_global.drop(df_row,inplace=True)
-        # print(df_global.loc[:,['Q21','Q24','Q27']])
-    else:
-        pass
-    
-    
-df_modified = df_global.loc[:,['Respondent_ID','Resp_Name','Interviewer','Q21','Q26']]
-
-    
-df_empty= pd.DataFrame()  
-df_s = df_modified['Interviewer'].value_counts()
-    
-interviewererror=pd.DataFrame(df_s)    
-
-total_sum = interviewererror.sum()
-total_sum.name = 'Total'
-interviewererror = interviewererror._append(total_sum)
-interviewererror['Total']=interviewererror.sum(min_count=1,axis=1)
-   
-
-
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_modified.to_csv(output_path,mode='a', index=False)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-interviewererror.to_csv(output_path, mode='a', index=True, )
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Error15 : Regular brand(q21)  not in First preference (Q25)
-
-df_global=df.copy()
-
-Error_n = ['Error15 : Regular brand(q21)  not in First preference (Q25) ']
-
-
-
-df_global=df.copy()
-
-
-filt = (df_global['T_Q25_1'] != df_global['Q21']) 
-
-nom = df_global.loc[filt,['Respondent_ID','Interviewer','Q21','T_Q25_1']]
-
-
-      
-df_modified = nom
-                                                   
-df_s = df_modified['Interviewer'].value_counts()
-
-Valuecount=pd.DataFrame(df_s)
-total_sum = Valuecount.sum()
-total_sum.name = 'Total'
-Valuecount=Valuecount._append(total_sum)
-
-
-
-
-    
-df_empty= pd.DataFrame()  
-
-
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_modified.to_csv(output_path,mode='a', index=False)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-Valuecount.to_csv(output_path, mode='a', index=True, )
-
-    
-
-
-
-
-
-# Error16 : Alternate regular  brand(q26)  not in any preference (Q25) 
-
-
-df_global=df.copy()
-
-Error_n = ['Error16 : Alternate regular  brand(q26)  not in any preference (Q25) ']
-
-
-
-
-
-
-filt = (df_global['T_Q25_1'] != df_global['Q26']) & (df_global['T_Q25_2']  != df_global['Q26'])  & (df_global['T_Q25_3']  != df_global['Q26']) 
-
-
-nom = df_global.loc[filt,['Respondent_ID','Interviewer','T_Q25_1','T_Q25_2','T_Q25_3','Q26']]
-
-
-
-      
-df_modified = nom
-                                                   
-df_s = df_modified['Interviewer'].value_counts()
-
-Valuecount=pd.DataFrame(df_s)
-total_sum = Valuecount.sum()
-total_sum.name = 'Total'
-Valuecount=Valuecount._append(total_sum)
-
-
-
-
-    
-df_empty= pd.DataFrame()  
-
-
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_modified.to_csv(output_path,mode='a', index=False)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-Valuecount.to_csv(output_path, mode='a', index=True, )
-
-    
-
-
-
-
-
-
-# Error17 : Q26 Price fluctuation between all 3 preferred brand 
-
-df_global=df.copy()
-
-df_global.reset_index(drop=True, inplace=True)
-
-Error_n = ['Error17 : Q26 Price fluctuation between all 3 preferred brand   ']
-
-
-control_col=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148]
-
-
-cig_price={ 1:[120],
-            2:[100],
-            3:[165],
-            4:[0],
-            5:[40],
-            6:[40],
-            7:[48],
-            8:[0],
-            9:[80],
-            10:[65],
-            11:[40],
-            12:[47],
-            13:[65],
-            14:[48],
-            15:[43],
-            16:[0],
-            17:[40],
-            18:[40],
-            19:[0],
-            20:[40],
-            21:[48],
-            22:[0],
-            23:[165],
-            24:[150],
-            25:[165],
-            26:[165],
-            27:[165],
-            28:[100],
-            29:[0],
-            30:[50],
-            31:[50],
-            32:[60],
-            33:[51],
-            34:[70],
-            35:[0],
-            36:[90],
-            37:[89],
-            38:[89],
-            39:[89],
-            40:[85],
-            41:[55],
-            42:[89],
-            43:[0],
-            44:[200],
-            45:[100],
-            46:[100],
-            47:[95],
-            48:[165],
-            49:[165],
-            50:[165],
-            51:[95],
-            52:[150],
-            53:[95],
-            54:[95],
-            55:[95],
-            56:[95],
-            57:[95],
-            58:[60],
-            59:[50],
-            60:[59],
-            61:[59],
-            62:[0],
-            63:[180],
-            64:[45],
-            65:[0],
-            66:[165],
-            67:[100],
-            68:[95],
-            69:[60],
-            70:[165],
-            71:[330],
-            72:[0],
-            73:[165],
-            74:[95],
-            75:[165],
-            76:[0],
-            77:[47],
-            78:[49],
-            79:[0],
-            80:[95],
-            81:[59],
-            82:[80],
-            83:[50],
-            84:[50],
-            85:[94],
-            86:[40],
-            87:[60],
-            88:[0],
-            89:[70],
-            90:[70],
-            91:[80],
-            92:[55],
-            93:[0],
-            94:[55],
-            95:[55],
-            96:[55],
-            97:[0],
-            98:[47],
-            99:[69],
-            100:[58],
-            101:[0],
-            102:[49],
-            103:[45],
-            104:[49],
-            105:[0],
-            106:[50],
-            107:[50],
-            108:[80],
-            109:[45],
-            110:[50],
-            111:[58],
-            112:[100],
-            113:[120],
-            114:[58],
-            115:[0],
-            116:[100],
-            117:[100],
-            118:[0],
-            119:[54],
-            120:[60],
-            121:[60],
-            122:[60],
-            123:[60],
-            124:[60],
-            125:[70],
-            126:[60],
-            127:[70],
-            128:[60],
-            129:[70],
-            130:[75],
-            131:[100],
-            132:[160],
-            133:[0],
-            134:[60],
-            135:[60],
-            136:[60],
-            137:[60],
-            138:[80],
-            139:[47],
-            140:[0],
-            141:[95],
-            142:[110],
-            143:[95],
-            144:[50],
-            145:[70],
-            146:[60],
-            147:[95],
-            148:[68],
-            149:[70],
-
-            }
-
-
-
-
-
-for df_row in range (len(df_global)):
-    if (cig_price[df_global.loc[df_row,'T_Q25_1']][0])-(cig_price[df_global.loc[df_row,'T_Q25_2']][0])<=40 and (cig_price[df_global.loc[df_row,'T_Q25_1']][0])-(cig_price[df_global.loc[df_row,'T_Q25_2']][0])>=-40:
-    
-        df_global.drop(df_row,inplace=True)
-    elif (cig_price[df_global.loc[df_row,'T_Q25_2']][0])-(cig_price[df_global.loc[df_row,'T_Q25_3']][0])<=40 and (cig_price[df_global.loc[df_row,'T_Q25_2']][0])-(cig_price[df_global.loc[df_row,'T_Q25_3']][0])>=-40:
-        df_global.drop(df_row,inplace=True)
-    elif (cig_price[df_global.loc[df_row,'T_Q25_1']][0])-(cig_price[df_global.loc[df_row,'T_Q25_3']][0])<=40 and (cig_price[df_global.loc[df_row,'T_Q25_1']][0])-(cig_price[df_global.loc[df_row,'T_Q25_3']][0])>=-40:
-         df_global.drop(df_row,inplace=True)    
-    else:
-        pass
-    
-    
-df_modified = df_global.loc[:,['Respondent_ID','Resp_Name','Interviewer','T_Q25_1','T_Q25_2','T_Q25_3']]
-
-    
-df_empty= pd.DataFrame()  
-df_s = df_modified['Interviewer'].value_counts()
-    
-interviewererror=pd.DataFrame(df_s)    
-
-total_sum = interviewererror.sum()
-total_sum.name = 'Total'
-interviewererror = interviewererror._append(total_sum)
-interviewererror['Total']=interviewererror.sum(min_count=1,axis=1)
-   
-
-
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_modified.to_csv(output_path,mode='a', index=False)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-interviewererror.to_csv(output_path, mode='a', index=True, )
-
-    
-
-
-
-
-
-# Error18: Frequency of number of brands selected  by each interviewer in aided awareness(Q15)
+# Error5: Regular brand not in TOM  
 
 
 
 
 df_global=df.copy()
 
-Error_n = ['Error18: Frequency of number of brands selected  by each interviewer in aided awareness(Q15)']
-
-
-
-
-df_global['sum_columns'] = df_global[['A_Q15_1','A_Q15_2','A_Q15_3','A_Q15_4','A_Q15_5','A_Q15_6','A_Q15_7','A_Q15_8','A_Q15_9','A_Q15_10','A_Q15_11','A_Q15_12','A_Q15_13','A_Q15_14','A_Q15_15','A_Q15_16','A_Q15_17','A_Q15_18','A_Q15_19','A_Q15_20','A_Q15_21','A_Q15_22','A_Q15_23','A_Q15_24','A_Q15_25','A_Q15_26','A_Q15_27','A_Q15_28','A_Q15_29','A_Q15_30','A_Q15_31','A_Q15_32','A_Q15_33','A_Q15_34','A_Q15_35','A_Q15_36','A_Q15_37','A_Q15_38','A_Q15_39','A_Q15_40','A_Q15_41','A_Q15_42','A_Q15_43','A_Q15_44','A_Q15_45','A_Q15_46','A_Q15_47','A_Q15_48','A_Q15_49','A_Q15_50','A_Q15_51','A_Q15_52','A_Q15_53','A_Q15_54','A_Q15_55','A_Q15_56','A_Q15_57','A_Q15_58','A_Q15_59','A_Q15_60','A_Q15_61','A_Q15_62','A_Q15_63','A_Q15_64','A_Q15_65','A_Q15_66','A_Q15_67','A_Q15_68','A_Q15_69','A_Q15_70','A_Q15_71','A_Q15_72','A_Q15_73','A_Q15_74','A_Q15_75','A_Q15_76','A_Q15_77','A_Q15_78','A_Q15_79','A_Q15_80','A_Q15_81','A_Q15_82','A_Q15_83','A_Q15_84','A_Q15_85','A_Q15_86','A_Q15_87','A_Q15_88','A_Q15_89','A_Q15_90','A_Q15_91','A_Q15_92','A_Q15_93','A_Q15_94','A_Q15_95','A_Q15_96','A_Q15_97','A_Q15_98','A_Q15_99','A_Q15_100','A_Q15_101','A_Q15_102','A_Q15_103','A_Q15_104','A_Q15_105','A_Q15_106','A_Q15_107','A_Q15_108','A_Q15_109','A_Q15_110','A_Q15_111','A_Q15_112','A_Q15_113','A_Q15_114','A_Q15_115','A_Q15_116','A_Q15_117','A_Q15_118','A_Q15_119','A_Q15_120','A_Q15_121','A_Q15_122','A_Q15_123','A_Q15_124','A_Q15_125','A_Q15_126','A_Q15_127','A_Q15_128','A_Q15_129','A_Q15_130','A_Q15_131','A_Q15_132','A_Q15_133','A_Q15_134','A_Q15_135','A_Q15_136','A_Q15_137','A_Q15_138','A_Q15_139','A_Q15_140','A_Q15_141','A_Q15_142','A_Q15_143','A_Q15_144','A_Q15_145','A_Q15_146','A_Q15_147','A_Q15_148'
-
-]].sum(axis=1)
-
-
-df_modified = df_global.loc[:,['Resp_Name','Interviewer','sum_columns']]
-
-crosstab_result = pd.crosstab(df_modified['Interviewer'], df_modified['sum_columns'])
-
-
-
-# dynamic_headers = [f'brands{i}' for i in range(1, len(crosstab_result.columns) + 1)]
-
-count1=pd.DataFrame(crosstab_result )
-
-# count1.columns = [column_header.rjust(20, ' ') for column_header in count1.columns]
-
-# Sum_name=pd.DataFrame(df_s)
-
-
-
-df_empty= pd.DataFrame()  
-
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_modified.to_csv(output_path,mode='a', index=False)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-count1.to_csv(output_path, mode='a', index=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Error19: Frequency of number of brands selected  by each interviewer in ever smoked(Q16)
-
-
+Error_n = ['Error5 :  Regular brand not in TOM   ']
 
 
 
 df_global=df.copy()
 
-Error_n = ['Error19: Frequency of number of brands selected  by each interviewer in ever smoked(Q16)']
 
+# filt = (df['T_Q25_1'] != df['Q25_1']) & (df['T_Q25_2']  != df['Q25_1'])  & (df['T_Q25_3']  != df['Q25_1']) 
+filt = (df_global['Q14'] != df_global['Q21']) 
 
-
-
-df_global['sum_columns'] = df_global[['A_Q16_1','A_Q16_2','A_Q16_3','A_Q16_4','A_Q16_5','A_Q16_6','A_Q16_7','A_Q16_8','A_Q16_9','A_Q16_10','A_Q16_11','A_Q16_12','A_Q16_13','A_Q16_14','A_Q16_15','A_Q16_16','A_Q16_17','A_Q16_18','A_Q16_19','A_Q16_20','A_Q16_21','A_Q16_22','A_Q16_23','A_Q16_24','A_Q16_25','A_Q16_26','A_Q16_27','A_Q16_28','A_Q16_29','A_Q16_30','A_Q16_31','A_Q16_32','A_Q16_33','A_Q16_34','A_Q16_35','A_Q16_36','A_Q16_37','A_Q16_38','A_Q16_39','A_Q16_40','A_Q16_41','A_Q16_42','A_Q16_43','A_Q16_44','A_Q16_45','A_Q16_46','A_Q16_47','A_Q16_48','A_Q16_49','A_Q16_50','A_Q16_51','A_Q16_52','A_Q16_53','A_Q16_54','A_Q16_55','A_Q16_56','A_Q16_57','A_Q16_58','A_Q16_59','A_Q16_60','A_Q16_61','A_Q16_62','A_Q16_63','A_Q16_64','A_Q16_65','A_Q16_66','A_Q16_67','A_Q16_68','A_Q16_69','A_Q16_70','A_Q16_71','A_Q16_72','A_Q16_73','A_Q16_74','A_Q16_75','A_Q16_76','A_Q16_77','A_Q16_78','A_Q16_79','A_Q16_80','A_Q16_81','A_Q16_82','A_Q16_83','A_Q16_84','A_Q16_85','A_Q16_86','A_Q16_87','A_Q16_88','A_Q16_89','A_Q16_90','A_Q16_91','A_Q16_92','A_Q16_93','A_Q16_94','A_Q16_95','A_Q16_96','A_Q16_97','A_Q16_98','A_Q16_99','A_Q16_100','A_Q16_101','A_Q16_102','A_Q16_103','A_Q16_104','A_Q16_105','A_Q16_106','A_Q16_107','A_Q16_108','A_Q16_109','A_Q16_110','A_Q16_111','A_Q16_112','A_Q16_113','A_Q16_114','A_Q16_115','A_Q16_116','A_Q16_117','A_Q16_118','A_Q16_119','A_Q16_121','A_Q16_122','A_Q16_123','A_Q16_124','A_Q16_125','A_Q16_126','A_Q16_127','A_Q16_128','A_Q16_129','A_Q16_130','A_Q16_131','A_Q16_132','A_Q16_133','A_Q16_134','A_Q16_135','A_Q16_136','A_Q16_137','A_Q16_138','A_Q16_139','A_Q16_140','A_Q16_141','A_Q16_142','A_Q16_143','A_Q16_144','A_Q16_145','A_Q16_146','A_Q16_147','A_Q16_148'
-
-]].sum(axis=1)
-
-
-df_modified = df_global.loc[:,['Resp_Name','Interviewer','sum_columns']]
-
-crosstab_result = pd.crosstab(df_modified['Interviewer'], df_modified['sum_columns'])
-
-
-
-# dynamic_headers = [f'brands{i}' for i in range(1, len(crosstab_result.columns) + 1)]
-
-count1=pd.DataFrame(crosstab_result )
-
-# count1.columns = [column_header.rjust(20, ' ') for column_header in count1.columns]
-
-# Sum_name=pd.DataFrame(df_s)
-
-
-
-df_empty= pd.DataFrame()  
-
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_modified.to_csv(output_path,mode='a', index=False)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-count1.to_csv(output_path, mode='a', index=True)
-
-
-
-
-
-
-
-
-# Error20: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 year(Q18)
-
-
-df_global=df.copy()
-
-Error_n = ['Error20: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 year(Q18)']
-
-
-
-
-df_global['sum_columns'] = df_global[['A_Q18_1','A_Q18_2','A_Q18_3','A_Q18_4','A_Q18_5','A_Q18_6','A_Q18_7','A_Q18_8','A_Q18_9','A_Q18_10','A_Q18_11','A_Q18_12','A_Q18_13','A_Q18_14','A_Q18_15','A_Q18_16','A_Q18_17','A_Q18_18','A_Q18_19','A_Q18_20','A_Q18_21','A_Q18_22','A_Q18_23','A_Q18_24','A_Q18_25','A_Q18_26','A_Q18_27','A_Q18_28','A_Q18_29','A_Q18_30','A_Q18_31','A_Q18_32','A_Q18_33','A_Q18_34','A_Q18_35','A_Q18_36','A_Q18_37','A_Q18_38','A_Q18_39','A_Q18_40','A_Q18_41','A_Q18_42','A_Q18_43','A_Q18_44','A_Q18_45','A_Q18_46','A_Q18_47','A_Q18_48','A_Q18_49','A_Q18_50','A_Q18_51','A_Q18_52','A_Q18_53','A_Q18_54','A_Q18_55','A_Q18_56','A_Q18_57','A_Q18_58','A_Q18_59','A_Q18_60','A_Q18_61','A_Q18_62','A_Q18_63','A_Q18_64','A_Q18_65','A_Q18_66','A_Q18_67','A_Q18_68','A_Q18_69','A_Q18_70','A_Q18_71','A_Q18_72','A_Q18_73','A_Q18_74','A_Q18_75','A_Q18_76','A_Q18_77','A_Q18_78','A_Q18_79','A_Q18_80','A_Q18_81','A_Q18_82','A_Q18_83','A_Q18_84','A_Q18_85','A_Q18_86','A_Q18_87','A_Q18_88','A_Q18_89','A_Q18_90','A_Q18_91','A_Q18_92','A_Q18_93','A_Q18_94','A_Q18_95','A_Q18_96','A_Q18_97','A_Q18_98','A_Q18_99','A_Q18_100','A_Q18_101','A_Q18_102','A_Q18_103','A_Q18_104','A_Q18_105','A_Q18_106','A_Q18_107','A_Q18_108','A_Q18_109','A_Q18_110','A_Q18_111','A_Q18_112','A_Q18_113','A_Q18_114','A_Q18_115','A_Q18_116','A_Q18_117','A_Q18_118','A_Q18_119','A_Q18_120','A_Q18_121','A_Q18_122','A_Q18_123','A_Q18_124','A_Q18_125','A_Q18_126','A_Q18_127','A_Q18_128','A_Q18_129','A_Q18_130','A_Q18_131','A_Q18_132','A_Q18_133','A_Q18_134','A_Q18_135','A_Q18_136','A_Q18_137','A_Q18_138','A_Q18_139','A_Q18_140','A_Q18_141','A_Q18_142','A_Q18_143','A_Q18_144','A_Q18_145','A_Q18_146','A_Q18_147','A_Q18_148'
-
-]].sum(axis=1)
-
-
-df_modified = df_global.loc[:,['Resp_Name','Interviewer','sum_columns']]
-
-crosstab_result = pd.crosstab(df_modified['Interviewer'], df_modified['sum_columns'])
-
-
-
-# dynamic_headers = [f'brands{i}' for i in range(1, len(crosstab_result.columns) + 1)]
-
-count1=pd.DataFrame(crosstab_result )
-
-# count1.columns = [column_header.rjust(20, ' ') for column_header in count1.columns]
-
-# Sum_name=pd.DataFrame(df_s)
-
-
-
-df_empty= pd.DataFrame()  
-
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_modified.to_csv(output_path,mode='a', index=False)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-count1.to_csv(output_path, mode='a', index=True)
-
-
-
-
-
-
-
-
-# Error21: Frequency of number of brands selected  by each interviewer in ever smoked in last 3 months(Q19)
-
-
-df_global=df.copy()
-
-Error_n = ['Error21: Frequency of number of brands selected  by each interviewer in ever smoked in last 3 months(Q19)']
-
-
-
-
-df_global['sum_columns'] = df_global[['A_Q19_1','A_Q19_2','A_Q19_3','A_Q19_4','A_Q19_5','A_Q19_6','A_Q19_7','A_Q19_8','A_Q19_9','A_Q19_10','A_Q19_11','A_Q19_12','A_Q19_13','A_Q19_14','A_Q19_15','A_Q19_16','A_Q19_17','A_Q19_18','A_Q19_19','A_Q19_20','A_Q19_21','A_Q19_22','A_Q19_23','A_Q19_24','A_Q19_25','A_Q19_26','A_Q19_27','A_Q19_28','A_Q19_29','A_Q19_30','A_Q19_31','A_Q19_32','A_Q19_33','A_Q19_34','A_Q19_35','A_Q19_36','A_Q19_37','A_Q19_38','A_Q19_39','A_Q19_40','A_Q19_41','A_Q19_42','A_Q19_43','A_Q19_44','A_Q19_45','A_Q19_46','A_Q19_47','A_Q19_48','A_Q19_49','A_Q19_50','A_Q19_51','A_Q19_52','A_Q19_53','A_Q19_54','A_Q19_55','A_Q19_56','A_Q19_57','A_Q19_58','A_Q19_59','A_Q19_60','A_Q19_61','A_Q19_62','A_Q19_63','A_Q19_64','A_Q19_65','A_Q19_66','A_Q19_67','A_Q19_68','A_Q19_69','A_Q19_70','A_Q19_71','A_Q19_72','A_Q19_73','A_Q19_74','A_Q19_75','A_Q19_76','A_Q19_77','A_Q19_78','A_Q19_79','A_Q19_80','A_Q19_81','A_Q19_82','A_Q19_83','A_Q19_84','A_Q19_85','A_Q19_86','A_Q19_87','A_Q19_88','A_Q19_89','A_Q19_90','A_Q19_91','A_Q19_92','A_Q19_93','A_Q19_94','A_Q19_95','A_Q19_96','A_Q19_97','A_Q19_98','A_Q19_99','A_Q19_100','A_Q19_101','A_Q19_102','A_Q19_103','A_Q19_104','A_Q19_105','A_Q19_106','A_Q19_107','A_Q19_108','A_Q19_109','A_Q19_110','A_Q19_111','A_Q19_112','A_Q19_113','A_Q19_114','A_Q19_115','A_Q19_116','A_Q19_117','A_Q19_118','A_Q19_119','A_Q19_120','A_Q19_121','A_Q19_122','A_Q19_123','A_Q19_124','A_Q19_125','A_Q19_126','A_Q19_127','A_Q19_128','A_Q19_129','A_Q19_130','A_Q19_131','A_Q19_132','A_Q19_133','A_Q19_134','A_Q19_135','A_Q19_136','A_Q19_137','A_Q19_138','A_Q19_139','A_Q19_140','A_Q19_141','A_Q19_142','A_Q19_143','A_Q19_144','A_Q19_145','A_Q19_146','A_Q19_147','A_Q19_148'
-
-]].sum(axis=1)
-
-
-df_modified = df_global.loc[:,['Resp_Name','Interviewer','sum_columns']]
-
-crosstab_result = pd.crosstab(df_modified['Interviewer'], df_modified['sum_columns'])
-
-
-
-# dynamic_headers = [f'brands{i}' for i in range(1, len(crosstab_result.columns) + 1)]
-
-count1=pd.DataFrame(crosstab_result )
-
-# count1.columns = [column_header.rjust(20, ' ') for column_header in count1.columns]
-
-# Sum_name=pd.DataFrame(df_s)
-
-
-
-df_empty= pd.DataFrame()  
-
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_modified.to_csv(output_path,mode='a', index=False)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-count1.to_csv(output_path, mode='a', index=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Error22: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 weeks(Q20)
-
-
-df_global=df.copy()
-
-Error_n = ['Error22: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 weeks(Q20)']
-
-
-
-
-df_global['sum_columns'] = df_global[['A_Q20_1','A_Q20_2','A_Q20_3','A_Q20_4','A_Q20_5','A_Q20_6','A_Q20_7','A_Q20_8','A_Q20_9','A_Q20_10','A_Q20_11','A_Q20_12','A_Q20_13','A_Q20_14','A_Q20_15','A_Q20_16','A_Q20_17','A_Q20_18','A_Q20_19','A_Q20_20','A_Q20_21','A_Q20_22','A_Q20_23','A_Q20_24','A_Q20_25','A_Q20_26','A_Q20_27','A_Q20_28','A_Q20_29','A_Q20_30','A_Q20_31','A_Q20_32','A_Q20_33','A_Q20_34','A_Q20_35','A_Q20_36','A_Q20_37','A_Q20_38','A_Q20_39','A_Q20_40','A_Q20_41','A_Q20_42','A_Q20_43','A_Q20_44','A_Q20_45','A_Q20_46','A_Q20_47','A_Q20_48','A_Q20_49','A_Q20_50','A_Q20_51','A_Q20_52','A_Q20_53','A_Q20_54','A_Q20_55','A_Q20_56','A_Q20_57','A_Q20_58','A_Q20_59','A_Q20_60','A_Q20_61','A_Q20_62','A_Q20_63','A_Q20_64','A_Q20_65','A_Q20_66','A_Q20_67','A_Q20_68','A_Q20_69','A_Q20_70','A_Q20_71','A_Q20_72','A_Q20_73','A_Q20_74','A_Q20_75','A_Q20_76','A_Q20_77','A_Q20_78','A_Q20_79','A_Q20_80','A_Q20_81','A_Q20_82','A_Q20_83','A_Q20_84','A_Q20_85','A_Q20_86','A_Q20_87','A_Q20_88','A_Q20_89','A_Q20_90','A_Q20_91','A_Q20_92','A_Q20_93','A_Q20_94','A_Q20_95','A_Q20_96','A_Q20_97','A_Q20_98','A_Q20_99','A_Q20_100','A_Q20_101','A_Q20_102','A_Q20_103','A_Q20_104','A_Q20_105','A_Q20_106','A_Q20_107','A_Q20_108','A_Q20_109','A_Q20_110','A_Q20_111','A_Q20_112','A_Q20_113','A_Q20_114','A_Q20_115','A_Q20_116','A_Q20_117','A_Q20_118','A_Q20_119','A_Q20_120','A_Q20_121','A_Q20_122','A_Q20_123','A_Q20_124','A_Q20_125','A_Q20_126','A_Q20_127','A_Q20_128','A_Q20_129','A_Q20_130','A_Q20_131','A_Q20_132','A_Q20_133','A_Q20_134','A_Q20_135','A_Q20_136','A_Q20_137','A_Q20_138','A_Q20_139','A_Q20_140','A_Q20_141','A_Q20_142','A_Q20_143','A_Q20_144','A_Q20_145','A_Q20_146','A_Q20_147','A_Q20_148'
-
-]].sum(axis=1)
-
-
-df_modified = df_global.loc[:,['Resp_Name','Interviewer','sum_columns']]
-
-crosstab_result = pd.crosstab(df_modified['Interviewer'], df_modified['sum_columns'])
-
-
-
-# dynamic_headers = [f'brands{i}' for i in range(1, len(crosstab_result.columns) + 1)]
-
-count1=pd.DataFrame(crosstab_result )
-
-# count1.columns = [column_header.rjust(20, ' ') for column_header in count1.columns]
-
-# Sum_name=pd.DataFrame(df_s)
-
-
-
-df_empty= pd.DataFrame()  
-
-
-df_name= pd.DataFrame(Error_n)  
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_name.to_csv(output_path,mode='a', index=False, header=False)
-
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_modified.to_csv(output_path,mode='a', index=False)
-df_empty.to_csv(output_path,mode='a', index=True)
-df_empty.to_csv(output_path,mode='a', index=True)
-count1.to_csv(output_path, mode='a', index=True)
-
-
-
-
-
-# Error23: Regular  brand(q26)  not in any preference (Q21)
-
-
-
-df_global=df.copy()
-
-Error_n = ['Error23: Regular  brand(q21)  not in any preference (Q25) ']
-
-
-
-
-filt = (df_global['T_Q25_1'] != df_global['Q21']) & (df_global['T_Q25_2']  != df_global['Q21'])  & (df_global['T_Q25_3']  != df_global['Q21']) 
-
-
-nom = df_global.loc[filt,['Respondent_ID','Interviewer','Q21','T_Q25_1','T_Q25_2','T_Q25_3']]
+nom = df_global.loc[filt,['Respondent_ID','Interviewer','Q14','Q21']]
 
 
 # new_df = (
@@ -1898,6 +536,7 @@ df_empty.to_csv(output_path,mode='a', index=True)
 df_empty.to_csv(output_path,mode='a', index=True)
 Valuecount.to_csv(output_path, mode='a', index=True, )
 
+    
 
 
 
@@ -1908,8 +547,7 @@ Valuecount.to_csv(output_path, mode='a', index=True, )
 
 
 
-
-# Error24: Regular brand not in TOM  or spont
+# Error6: Regular brand not in TOM  or spont
 
 
 
@@ -1918,7 +556,7 @@ df_global.reset_index(drop=True, inplace=True)
 
 
 
-Error_n = ['Error24: Regular brand not in TOM  or spont']
+Error_n = ['Error6: Regular brand not in TOM  or spont']
 
 
 
@@ -2073,7 +711,8 @@ control_dict={1:'A_Q14_1_1',
               146:'A_Q14_1_146',
               147:'A_Q14_1_147',
               148:'A_Q14_1_148',
-              
+              149:'A_Q14_1_149',
+              150:'A_Q14_1_150',
               }
 
 
@@ -2123,6 +762,63 @@ df_empty.to_csv(output_path,mode='a', index=True)
 df_modified.to_csv(output_path,mode='a', index=False)
 df_empty.to_csv(output_path,mode='a', index=True)
 df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True )
+
+    
+
+
+
+
+
+
+# Error7 : Regular brand(q21)  not in First preference (Q25)
+
+df_global=df.copy()
+
+Error_n = ['Error7 : Regular brand(q21)  not in First preference (Q25) ']
+
+
+
+df_global=df.copy()
+
+
+filt = (df_global['T_Q25_1'] != df_global['Q21']) 
+
+nom = df_global.loc[filt,['Respondent_ID','Interviewer','Q21','T_Q25_1']]
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+
+
+
+    
+df_empty= pd.DataFrame()  
+
+
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
 Valuecount.to_csv(output_path, mode='a', index=True, )
 
     
@@ -2133,24 +829,22 @@ Valuecount.to_csv(output_path, mode='a', index=True, )
 
 
 
-# Error25: Regular brand not in TOM  
 
-
-
-
-df_global=df.copy()
-
-Error_n = ['Error25 : Error25: Regular brand not in TOM   ']
+# Error8: Regular  brand(q26)  not in any preference (Q21)
 
 
 
 df_global=df.copy()
 
+Error_n = ['Error8: Regular  brand(q21)  not in any preference (Q25) ']
 
-# filt = (df['T_Q25_1'] != df['Q25_1']) & (df['T_Q25_2']  != df['Q25_1'])  & (df['T_Q25_3']  != df['Q25_1']) 
-filt = (df_global['Q14'] != df_global['Q21']) 
 
-nom = df_global.loc[filt,['Respondent_ID','Interviewer','Q14','Q21']]
+
+
+filt = (df_global['T_Q25_1'] != df_global['Q21']) & (df_global['T_Q25_2']  != df_global['Q21'])  & (df_global['T_Q25_3']  != df_global['Q21']) 
+
+
+nom = df_global.loc[filt,['Respondent_ID','Interviewer','Q21','T_Q25_1','T_Q25_2','T_Q25_3']]
 
 
 # new_df = (
@@ -2195,4 +889,1847 @@ df_empty.to_csv(output_path,mode='a', index=True)
 df_empty.to_csv(output_path,mode='a', index=True)
 Valuecount.to_csv(output_path, mode='a', index=True, )
 
+
+
+
+
+
+# Error9 : Alternate regular  brand(q26)  not in any preference (Q25) 
+
+
+df_global=df.copy()
+
+Error_n = ['Error9 : Alternate regular  brand(q26)  not in any preference (Q25) ']
+
+
+
+
+
+
+filt = (df_global['T_Q25_1'] != df_global['Q26']) & (df_global['T_Q25_2']  != df_global['Q26'])  & (df_global['T_Q25_3']  != df_global['Q26']) 
+
+
+nom = df_global.loc[filt,['Respondent_ID','Interviewer','T_Q25_1','T_Q25_2','T_Q25_3','Q26']]
+
+
+
+input_string1=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148]
+input_string = "Amercian Club Length - 84 mm MRP/10's - Rs.120,American Club<br>Length - 84 mm<br>MRP/10's - Rs.100,Benson & Hedges <br>Length - 84 mm<br>MRP/10's - Rs.165,Blue Charms (Unspecified),Blue Charms 64<br>Length - 64 mm<br>MRP/10's - Rs.40,Blue Charms Regular 64<br>Length - 64 mm<br>MRP/10's - Rs.40,Blue Charms<br>Length - 64 mm<br>MRP/10's - Rs.48,Capstan (Unspecified),Capstan Excel<br>Length - 69 mm<br>MRP/10's - Rs.80,Capstan Filter<br>Length - 64 mm<br>MRP/10's - Rs.65,Capstan Metro<br>Length - 64 mm<br>MRP/10's - Rs.40,Capstan Pilot<br>Length - 64 mm<br>MRP/10's - Rs.47,Capstan Special Filter<br>Length - 64 mm<br>MRP/10's - Rs.65,Cavanders Gold Rich Taste<br>Length - 64 mm<br>MRP/10's - Rs.48,Cavenders Special Filter<br>Length - 64 mm<br>MRP/10's - Rs.43,Charminar (Unspecified),Charminar Filter 64<br>Length - 64 mm<br>MRP/10's - Rs.40,Charminar Plains 64<br>Length - 64 mm<br>MRP/10's - Rs.40,Charms (Unspecified),Charms Regular Filter<br>Length - 64 mm<br>MRP/10's - Rs.40,Charms Virginia Filter<br>Length - 64 mm<br>MRP/10's - Rs.48,Classic (Unspecified),Classic-20'S<br>Length - 84 mm<br>MRP/10's - Rs.165,Classic Connect<br>Length - 97 mm<br>MRP/10's - Rs.150,Classic Ice Burst<br>Length - 84 mm<br>MRP/10's - Rs.165,Classic Mild<br>Length - 84 mm<br>MRP/10's - Rs.165,Classic<br>Length - 84 mm<br>MRP/10's - Rs.165,Editions Trio<br>Length - 92 mm<br>MRP/10's - Rs.100,Flake (Unspecified),Flake Fine Cut<br>Length - 64 mm<br>MRP/10's - Rs.50,Flake Fresh<br>Length - 64 mm<br>MRP/10's - Rs.50,Flake Special Filter<br>Length - 64 mm<br>MRP/10's - Rs.60,Focus<br>Length - 64 mm<br>MRP/10's - Rs.51,Focus<br>Length - 69 mm<br>MRP/10's - Rs.70,Four Square (Unspecified),Four Square Clove Crush<br>Length - 64 mm<br>MRP/10's - Rs.90,Four Square Clove Crush<br>Length - 69 mm<br>MRP/10's - Rs.89,Four Square Crush Pan<br>Length - 69 mm<br>MRP/10's - Rs.89,Four Square Crush<br>Length - 69 mm<br>MRP/10's - Rs.89,Four Square Special<br>Length - 69 mm<br>MRP/10's - Rs.85,Four Square<br>Length - 69 mm<br>MRP/10's - Rs.55,Four Square<br>Length - 69 mm<br>MRP/10's - Rs.89,Gold Flake (Unspecified),Gold Flake Clove Filter<br>Length - 84 mm<br>MRP/10's - Rs.200,Gold Flake Filter<br>Length - 69 mm<br>MRP/10's - Rs.100,Gold Flake Indie Mint<br>Length - 69 mm<br>MRP/10's - Rs.100,Gold Flake Indie Mint<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Kings Lights<br>Length - 84 mm<br>MRP/10's - Rs.165,Gold Flake Kings<br>Length - 84 mm<br>MRP/10's - Rs.165,Gold Flake Mix Pod<br>Length - 84 mm<br>MRP/10's - Rs.165,Gold Flake Neo Smart<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Neo -Super Slim<br>Length - 97 mm<br>MRP/10's - Rs.150,Gold Flake Premium Filter Mint<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Premium Filter<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Premium Fresh Mint<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Premium Mint Switch<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Premium<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Special<br>Length - 64 mm<br>MRP/10's - Rs.60,Gold Flake Super Star<br>Length - 64 mm<br>MRP/10's - Rs.50,Gold Flake Super Star<br>Length - 64 mm<br>MRP/10's - Rs.59,Gold Flake Superstar Mint<br>Length - 64 mm<br>MRP/10's - Rs.59,Gold Magic<br>Length - 84 mm,India King<br>Length - 84 mm<br>MRP/10's - Rs.180,Kingston 64<br>Length - 64 mm<br>MRP/10's - Rs.45,Marlboro (Unspecified),Marlboro <br>Length - 84 mm<br>MRP/10's - Rs.165,Marlboro Advance Compact<br>Length - 69 mm<br>MRP/10's - Rs.100,Marlboro Advance Compact<br>Length - 69 mm<br>MRP/10's - Rs.95,Marlboro Advance Pocket<br>Length - 64 mm<br>MRP/10's - Rs.60,Marlboro Advance<br>Length - 84 mm<br>MRP/10's - Rs.165,Marlboro Advance<br>Length - 84 mm<br>MRP/10's - Rs.330,Marlboro Clove<br>Length - 84 mm,Marlboro Clove<br>Length - 84 mm<br>MRP/10's - Rs.165,Marlboro Compact<br>Length - 69 mm<br>MRP/10's - Rs.95,Marlboro<br>Length - 84 mm<br>MRP/10's - Rs.165,Moments (Unspecified),Moments Regular 64<br>Length - 64 mm<br>MRP/10's - Rs.47,Moments Satins 64<br>Length - 64 mm<br>MRP/10's - Rs.49,Navy Cut (Unspecified),Navy Cut 69<br>Length - 69 mm<br>MRP/10's - Rs.95,Navy Cut Fruit<br>Length - 69 mm<br>MRP/10's - Rs.59,Navy Cut Rsft<br>Length - 69 mm<br>MRP/10's - Rs.80,Navy Cut Virginia Filter<br>Length - 64 mm<br>MRP/10's - Rs.50,Navy Cut Virginia/ Centure<br>Length - 64 mm<br>MRP/10's - Rs.50,Navy Cut<br>Length - 74 mm<br>MRP/10's - Rs.94,Originals<br>Length - 64 mm<br>MRP/10's - Rs.40,Pall Mall<br>Length - 64 mm<br>MRP/10's - Rs.60,Panama<br>Length - 64 mm,Players Fruity Cool / Players Minty Cool<br>Length - 69 mm<br>MRP/10's - Rs.70,Players<br>Length - 69 mm<br>MRP/10's - Rs.70,Players<br>Length - 69 mm<br>MRP/10's - Rs.80,R&W (M)<br>Length - 64 mm<br>MRP/10's - Rs.55,Red And White (Unspecified)<br>,Red And White Flake<br>Length - 69 mm<br>MRP/10's - Rs.55,Red And White Mint Burst<br>Length - 64 mm<br>MRP/10's - Rs.55,Red And White<br>Length - 69 mm<br>MRP/10's - Rs.55,Red Charms (Unspecified),Red Charms Mini Kings<br>Length - 64 mm<br>MRP/10's - Rs.47,Red Charms<br>Length - 69 mm<br>MRP/10's - Rs.69,Red Special Longs 69<br>Length - 69 mm<br>MRP/10's - Rs.58,Regent<br>Length - 84 mm,Royal<br>Length - 64 mm<br>MRP/10's - Rs.49,Select Flake Premium<br>Length - 64 mm<br>MRP/10's - Rs.45,Select<br>Length - 64 mm<br>MRP/10's - Rs.49,Silk Cut (Unspecified),Silk Cut Blue<br>Length - 64 mm<br>MRP/10's - Rs.50,Silk Cut Filter<br>Length - 64 mm<br>MRP/10's - Rs.50,Silk Cut Filter<br>Length - 69 mm<br>MRP/10's - Rs.80,Silk Cut Virginia<br>Length - 64 mm<br>MRP/10's - Rs.45,Silk Cut<br>Length - 64 mm<br>MRP/10's - Rs.50,Stellar <br>Length - 69 mm<br>MRP/10's - Rs.58,Stellar Define/Shift<br>Length - 99 mm<br>MRP/10's - Rs.100,Stellar Define<br>Length - 84 mm<br>MRP/10's - Rs.120,Stellar<br>Length - 69 mm<br>MRP/10's - Rs.58,Steller (Unspecified),Steller Define<br>Length - 84 mm<br>MRP/10's - Rs.100,Steller Shift<br>Length - 84 mm<br>MRP/10's - Rs.100,Total (Unspecified),Total Active Mint<br>Length - 64 mm<br>MRP/10's - Rs.54,Total Active Mint<br>Length - 64 mm<br>MRP/10's - Rs.60,Total Fruity Five<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Fusion<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Red White<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Refresh<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Refresh<br>Length - 69 mm<br>MRP/10's - Rs.70,Total Royal Twist<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Royal Twist<br>Length - 69 mm<br>MRP/10's - Rs.70,Total Spearmint<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Spearmint<br>Length - 69 mm<br>MRP/10's - Rs.70,Total Spearmint<br>Length - 69 mm<br>MRP/10's - Rs.75,Total T3<br>Length - 92 mm<br>MRP/10's - Rs.100,Total T3<br>Length - 92 mm<br>MRP/10's - Rs.160,Wave (Unspecified),Wave Cool Mint<br>Length - 69 mm<br>MRP/10's - Rs.60,Wave Fruity<br>Length - 69 mm<br>MRP/10's - Rs.60,Wave Mint<br>Length - 69 mm<br>MRP/10's - Rs.60,Wave<br>Length - 69 mm<br>MRP/10's - Rs.60,Wft-Reg<br>Length - 69 mm<br>MRP/10's - Rs.80,White Special Extra Smooth 64<br>Length - 64 mm<br>MRP/10's - Rs.47,Wills (Unspecified),Wills Filter<br>Length - 69 mm<br>MRP/10's - Rs.95,Wills Filter<br>Length - 74 mm<br>MRP/10's - Rs.110,Wills Flake Filter 69<br>Length - 69 mm<br>MRP/10's - Rs.95,Wills Flake Filter Gold Crest<br>Length - 64 mm<br>MRP/10's - Rs.50,Wills Flake Filter<br>Length - 64 mm<br>MRP/10's - Rs.70,Wills Flake Special Filter<br>Length - 69 mm<br>MRP/10's - Rs.60,Wills Navy Cut Delux<br>Length - 69 mm<br>MRP/10's - Rs.95,Zaffran 69<br>Length - 69 mm<br>MRP/10's - Rs.68"
+modified_string = input_string.split(",")
+
+dictionary = dict(zip(input_string1, modified_string))
+
+nom['T_Q25_1'] = nom['T_Q25_1'].replace(dictionary)
+
+nom['T_Q25_2'] = nom['T_Q25_2'].replace(dictionary)
+
+nom['T_Q25_3'] = nom['T_Q25_3'].replace(dictionary)
+
+nom['Q26'] = nom['Q26'].replace(dictionary)
+
+
+      
+df_modified = nom
+                                                   
+df_s = df_modified['Interviewer'].value_counts()
+
+Valuecount=pd.DataFrame(df_s)
+total_sum = Valuecount.sum()
+total_sum.name = 'Total'
+Valuecount=Valuecount._append(total_sum)
+
+
+
+
     
+df_empty= pd.DataFrame()  
+
+
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Valuecount.to_csv(output_path, mode='a', index=True, )
+
+    
+
+
+
+# Error10 : Q24 Price fluctuation between regular and previous regular 
+
+
+
+df_global=df.copy()
+# df_global.reset_index(drop=True, inplace=True)
+
+Error_n = ['Error10 : Q24 Price fluctuation between regular and previous regular  ']
+
+
+control_col=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148]
+
+
+cig_price={ 1:[120],
+            2:[100],
+            3:[165],
+            4:[0],
+            5:[40],
+            6:[40],
+            7:[48],
+            8:[0],
+            9:[80],
+            10:[65],
+            11:[40],
+            12:[47],
+            13:[65],
+            14:[48],
+            15:[43],
+            16:[0],
+            17:[40],
+            18:[40],
+            19:[0],
+            20:[40],
+            21:[48],
+            22:[0],
+            23:[165],
+            24:[150],
+            25:[165],
+            26:[165],
+            27:[165],
+            28:[100],
+            29:[0],
+            30:[50],
+            31:[50],
+            32:[60],
+            33:[51],
+            34:[70],
+            35:[0],
+            36:[90],
+            37:[89],
+            38:[89],
+            39:[89],
+            40:[85],
+            41:[55],
+            42:[89],
+            43:[0],
+            44:[200],
+            45:[100],
+            46:[100],
+            47:[95],
+            48:[165],
+            49:[165],
+            50:[165],
+            51:[95],
+            52:[150],
+            53:[95],
+            54:[95],
+            55:[95],
+            56:[95],
+            57:[95],
+            58:[60],
+            59:[50],
+            60:[59],
+            61:[59],
+            62:[0],
+            63:[180],
+            64:[45],
+            65:[0],
+            66:[165],
+            67:[100],
+            68:[95],
+            69:[60],
+            70:[165],
+            71:[330],
+            72:[0],
+            73:[165],
+            74:[95],
+            75:[165],
+            76:[0],
+            77:[47],
+            78:[49],
+            79:[0],
+            80:[95],
+            81:[59],
+            82:[80],
+            83:[50],
+            84:[50],
+            85:[94],
+            86:[40],
+            87:[60],
+            88:[0],
+            89:[70],
+            90:[70],
+            91:[80],
+            92:[55],
+            93:[0],
+            94:[55],
+            95:[55],
+            96:[55],
+            97:[0],
+            98:[47],
+            99:[69],
+            100:[58],
+            101:[0],
+            102:[49],
+            103:[45],
+            104:[49],
+            105:[0],
+            106:[50],
+            107:[50],
+            108:[80],
+            109:[45],
+            110:[50],
+            111:[58],
+            112:[100],
+            113:[120],
+            114:[58],
+            115:[0],
+            116:[100],
+            117:[100],
+            118:[0],
+            119:[54],
+            120:[60],
+            121:[60],
+            122:[60],
+            123:[60],
+            124:[60],
+            125:[70],
+            126:[60],
+            127:[70],
+            128:[60],
+            129:[70],
+            130:[75],
+            131:[100],
+            132:[160],
+            133:[0],
+            134:[60],
+            135:[60],
+            136:[60],
+            137:[60],
+            138:[80],
+            139:[47],
+            140:[0],
+            141:[95],
+            142:[110],
+            143:[95],
+            144:[50],
+            145:[70],
+            146:[60],
+            147:[95],
+            148:[68],
+            149:[70],
+            150:[100]
+            }
+
+df_global = df_global.dropna(subset=['Q24'])
+
+df_global.reset_index(drop=True, inplace=True)
+
+
+for df_row in range (len(df_global)):
+    # if (cig_price[df_global.loc[df_row,'Q21']][1])-(cig_price[df_global.loc[df_row,'Q24']][1])<=40 and (cig_price[df_global.loc[df_row,'Q21']][1])-(cig_price[df_global.loc[df_row,'Q24']][1])>=-40:
+    # if (cig_price[df_global.loc[df_row,'Q21']][1])-(cig_price[df_global.loc[df_row,'Q24']][1])<=40  :
+        
+    # print(cig_price[df_global.loc[df_row,'Q21']][0])
+    if (cig_price[df_global.loc[df_row,'Q21']][0])-(cig_price[df_global.loc[df_row,'Q24']][0])<=40 and (cig_price[df_global.loc[df_row,'Q21']][0])-(cig_price[df_global.loc[df_row,'Q24']][0])>=-40:
+    
+        df_global.drop(df_row,inplace=True)
+        # print(df_global.loc[:,['Q21','Q24','Q27']])
+    else:
+        pass
+    
+    
+df_modified = df_global.loc[:,['Respondent_ID','Resp_Name','Interviewer','Q21','Q24']]
+
+
+input_string1=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148]
+input_string = "Amercian Club Length - 84 mm MRP/10's - Rs.120,American Club<br>Length - 84 mm<br>MRP/10's - Rs.100,Benson & Hedges <br>Length - 84 mm<br>MRP/10's - Rs.165,Blue Charms (Unspecified),Blue Charms 64<br>Length - 64 mm<br>MRP/10's - Rs.40,Blue Charms Regular 64<br>Length - 64 mm<br>MRP/10's - Rs.40,Blue Charms<br>Length - 64 mm<br>MRP/10's - Rs.48,Capstan (Unspecified),Capstan Excel<br>Length - 69 mm<br>MRP/10's - Rs.80,Capstan Filter<br>Length - 64 mm<br>MRP/10's - Rs.65,Capstan Metro<br>Length - 64 mm<br>MRP/10's - Rs.40,Capstan Pilot<br>Length - 64 mm<br>MRP/10's - Rs.47,Capstan Special Filter<br>Length - 64 mm<br>MRP/10's - Rs.65,Cavanders Gold Rich Taste<br>Length - 64 mm<br>MRP/10's - Rs.48,Cavenders Special Filter<br>Length - 64 mm<br>MRP/10's - Rs.43,Charminar (Unspecified),Charminar Filter 64<br>Length - 64 mm<br>MRP/10's - Rs.40,Charminar Plains 64<br>Length - 64 mm<br>MRP/10's - Rs.40,Charms (Unspecified),Charms Regular Filter<br>Length - 64 mm<br>MRP/10's - Rs.40,Charms Virginia Filter<br>Length - 64 mm<br>MRP/10's - Rs.48,Classic (Unspecified),Classic-20'S<br>Length - 84 mm<br>MRP/10's - Rs.165,Classic Connect<br>Length - 97 mm<br>MRP/10's - Rs.150,Classic Ice Burst<br>Length - 84 mm<br>MRP/10's - Rs.165,Classic Mild<br>Length - 84 mm<br>MRP/10's - Rs.165,Classic<br>Length - 84 mm<br>MRP/10's - Rs.165,Editions Trio<br>Length - 92 mm<br>MRP/10's - Rs.100,Flake (Unspecified),Flake Fine Cut<br>Length - 64 mm<br>MRP/10's - Rs.50,Flake Fresh<br>Length - 64 mm<br>MRP/10's - Rs.50,Flake Special Filter<br>Length - 64 mm<br>MRP/10's - Rs.60,Focus<br>Length - 64 mm<br>MRP/10's - Rs.51,Focus<br>Length - 69 mm<br>MRP/10's - Rs.70,Four Square (Unspecified),Four Square Clove Crush<br>Length - 64 mm<br>MRP/10's - Rs.90,Four Square Clove Crush<br>Length - 69 mm<br>MRP/10's - Rs.89,Four Square Crush Pan<br>Length - 69 mm<br>MRP/10's - Rs.89,Four Square Crush<br>Length - 69 mm<br>MRP/10's - Rs.89,Four Square Special<br>Length - 69 mm<br>MRP/10's - Rs.85,Four Square<br>Length - 69 mm<br>MRP/10's - Rs.55,Four Square<br>Length - 69 mm<br>MRP/10's - Rs.89,Gold Flake (Unspecified),Gold Flake Clove Filter<br>Length - 84 mm<br>MRP/10's - Rs.200,Gold Flake Filter<br>Length - 69 mm<br>MRP/10's - Rs.100,Gold Flake Indie Mint<br>Length - 69 mm<br>MRP/10's - Rs.100,Gold Flake Indie Mint<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Kings Lights<br>Length - 84 mm<br>MRP/10's - Rs.165,Gold Flake Kings<br>Length - 84 mm<br>MRP/10's - Rs.165,Gold Flake Mix Pod<br>Length - 84 mm<br>MRP/10's - Rs.165,Gold Flake Neo Smart<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Neo -Super Slim<br>Length - 97 mm<br>MRP/10's - Rs.150,Gold Flake Premium Filter Mint<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Premium Filter<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Premium Fresh Mint<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Premium Mint Switch<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Premium<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Special<br>Length - 64 mm<br>MRP/10's - Rs.60,Gold Flake Super Star<br>Length - 64 mm<br>MRP/10's - Rs.50,Gold Flake Super Star<br>Length - 64 mm<br>MRP/10's - Rs.59,Gold Flake Superstar Mint<br>Length - 64 mm<br>MRP/10's - Rs.59,Gold Magic<br>Length - 84 mm,India King<br>Length - 84 mm<br>MRP/10's - Rs.180,Kingston 64<br>Length - 64 mm<br>MRP/10's - Rs.45,Marlboro (Unspecified),Marlboro <br>Length - 84 mm<br>MRP/10's - Rs.165,Marlboro Advance Compact<br>Length - 69 mm<br>MRP/10's - Rs.100,Marlboro Advance Compact<br>Length - 69 mm<br>MRP/10's - Rs.95,Marlboro Advance Pocket<br>Length - 64 mm<br>MRP/10's - Rs.60,Marlboro Advance<br>Length - 84 mm<br>MRP/10's - Rs.165,Marlboro Advance<br>Length - 84 mm<br>MRP/10's - Rs.330,Marlboro Clove<br>Length - 84 mm,Marlboro Clove<br>Length - 84 mm<br>MRP/10's - Rs.165,Marlboro Compact<br>Length - 69 mm<br>MRP/10's - Rs.95,Marlboro<br>Length - 84 mm<br>MRP/10's - Rs.165,Moments (Unspecified),Moments Regular 64<br>Length - 64 mm<br>MRP/10's - Rs.47,Moments Satins 64<br>Length - 64 mm<br>MRP/10's - Rs.49,Navy Cut (Unspecified),Navy Cut 69<br>Length - 69 mm<br>MRP/10's - Rs.95,Navy Cut Fruit<br>Length - 69 mm<br>MRP/10's - Rs.59,Navy Cut Rsft<br>Length - 69 mm<br>MRP/10's - Rs.80,Navy Cut Virginia Filter<br>Length - 64 mm<br>MRP/10's - Rs.50,Navy Cut Virginia/ Centure<br>Length - 64 mm<br>MRP/10's - Rs.50,Navy Cut<br>Length - 74 mm<br>MRP/10's - Rs.94,Originals<br>Length - 64 mm<br>MRP/10's - Rs.40,Pall Mall<br>Length - 64 mm<br>MRP/10's - Rs.60,Panama<br>Length - 64 mm,Players Fruity Cool / Players Minty Cool<br>Length - 69 mm<br>MRP/10's - Rs.70,Players<br>Length - 69 mm<br>MRP/10's - Rs.70,Players<br>Length - 69 mm<br>MRP/10's - Rs.80,R&W (M)<br>Length - 64 mm<br>MRP/10's - Rs.55,Red And White (Unspecified)<br>,Red And White Flake<br>Length - 69 mm<br>MRP/10's - Rs.55,Red And White Mint Burst<br>Length - 64 mm<br>MRP/10's - Rs.55,Red And White<br>Length - 69 mm<br>MRP/10's - Rs.55,Red Charms (Unspecified),Red Charms Mini Kings<br>Length - 64 mm<br>MRP/10's - Rs.47,Red Charms<br>Length - 69 mm<br>MRP/10's - Rs.69,Red Special Longs 69<br>Length - 69 mm<br>MRP/10's - Rs.58,Regent<br>Length - 84 mm,Royal<br>Length - 64 mm<br>MRP/10's - Rs.49,Select Flake Premium<br>Length - 64 mm<br>MRP/10's - Rs.45,Select<br>Length - 64 mm<br>MRP/10's - Rs.49,Silk Cut (Unspecified),Silk Cut Blue<br>Length - 64 mm<br>MRP/10's - Rs.50,Silk Cut Filter<br>Length - 64 mm<br>MRP/10's - Rs.50,Silk Cut Filter<br>Length - 69 mm<br>MRP/10's - Rs.80,Silk Cut Virginia<br>Length - 64 mm<br>MRP/10's - Rs.45,Silk Cut<br>Length - 64 mm<br>MRP/10's - Rs.50,Stellar <br>Length - 69 mm<br>MRP/10's - Rs.58,Stellar Define/Shift<br>Length - 99 mm<br>MRP/10's - Rs.100,Stellar Define<br>Length - 84 mm<br>MRP/10's - Rs.120,Stellar<br>Length - 69 mm<br>MRP/10's - Rs.58,Steller (Unspecified),Steller Define<br>Length - 84 mm<br>MRP/10's - Rs.100,Steller Shift<br>Length - 84 mm<br>MRP/10's - Rs.100,Total (Unspecified),Total Active Mint<br>Length - 64 mm<br>MRP/10's - Rs.54,Total Active Mint<br>Length - 64 mm<br>MRP/10's - Rs.60,Total Fruity Five<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Fusion<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Red White<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Refresh<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Refresh<br>Length - 69 mm<br>MRP/10's - Rs.70,Total Royal Twist<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Royal Twist<br>Length - 69 mm<br>MRP/10's - Rs.70,Total Spearmint<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Spearmint<br>Length - 69 mm<br>MRP/10's - Rs.70,Total Spearmint<br>Length - 69 mm<br>MRP/10's - Rs.75,Total T3<br>Length - 92 mm<br>MRP/10's - Rs.100,Total T3<br>Length - 92 mm<br>MRP/10's - Rs.160,Wave (Unspecified),Wave Cool Mint<br>Length - 69 mm<br>MRP/10's - Rs.60,Wave Fruity<br>Length - 69 mm<br>MRP/10's - Rs.60,Wave Mint<br>Length - 69 mm<br>MRP/10's - Rs.60,Wave<br>Length - 69 mm<br>MRP/10's - Rs.60,Wft-Reg<br>Length - 69 mm<br>MRP/10's - Rs.80,White Special Extra Smooth 64<br>Length - 64 mm<br>MRP/10's - Rs.47,Wills (Unspecified),Wills Filter<br>Length - 69 mm<br>MRP/10's - Rs.95,Wills Filter<br>Length - 74 mm<br>MRP/10's - Rs.110,Wills Flake Filter 69<br>Length - 69 mm<br>MRP/10's - Rs.95,Wills Flake Filter Gold Crest<br>Length - 64 mm<br>MRP/10's - Rs.50,Wills Flake Filter<br>Length - 64 mm<br>MRP/10's - Rs.70,Wills Flake Special Filter<br>Length - 69 mm<br>MRP/10's - Rs.60,Wills Navy Cut Delux<br>Length - 69 mm<br>MRP/10's - Rs.95,Zaffran 69<br>Length - 69 mm<br>MRP/10's - Rs.68"
+modified_string = input_string.split(",")
+
+dictionary = dict(zip(input_string1, modified_string))
+
+df_modified['Q21'] = df_modified['Q21'].replace(dictionary)
+df_modified['Q24'] = df_modified['Q24'].replace(dictionary)
+
+    
+df_empty= pd.DataFrame()  
+df_s = df_modified['Interviewer'].value_counts()
+    
+interviewererror=pd.DataFrame(df_s)    
+
+total_sum = interviewererror.sum()
+total_sum.name = 'Total'
+interviewererror = interviewererror._append(total_sum)
+interviewererror['Total']=interviewererror.sum(min_count=1,axis=1)
+   
+
+
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+interviewererror.to_csv(output_path, mode='a', index=True, )
+
+
+
+
+
+
+
+
+
+
+
+# Error11 : Q26 Price fluctuation between regular and alternate regular 
+
+df_global=df.copy()
+df_global.reset_index(drop=True, inplace=True)
+
+Error_n = ['Error11 : Q26 Price fluctuation between regular and alternate regular   ']
+
+
+control_col=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148]
+
+
+cig_price={ 1:[120],
+            2:[100],
+            3:[165],
+            4:[0],
+            5:[40],
+            6:[40],
+            7:[48],
+            8:[0],
+            9:[80],
+            10:[65],
+            11:[40],
+            12:[47],
+            13:[65],
+            14:[48],
+            15:[43],
+            16:[0],
+            17:[40],
+            18:[40],
+            19:[0],
+            20:[40],
+            21:[48],
+            22:[0],
+            23:[165],
+            24:[150],
+            25:[165],
+            26:[165],
+            27:[165],
+            28:[100],
+            29:[0],
+            30:[50],
+            31:[50],
+            32:[60],
+            33:[51],
+            34:[70],
+            35:[0],
+            36:[90],
+            37:[89],
+            38:[89],
+            39:[89],
+            40:[85],
+            41:[55],
+            42:[89],
+            43:[0],
+            44:[200],
+            45:[100],
+            46:[100],
+            47:[95],
+            48:[165],
+            49:[165],
+            50:[165],
+            51:[95],
+            52:[150],
+            53:[95],
+            54:[95],
+            55:[95],
+            56:[95],
+            57:[95],
+            58:[60],
+            59:[50],
+            60:[59],
+            61:[59],
+            62:[0],
+            63:[180],
+            64:[45],
+            65:[0],
+            66:[165],
+            67:[100],
+            68:[95],
+            69:[60],
+            70:[165],
+            71:[330],
+            72:[0],
+            73:[165],
+            74:[95],
+            75:[165],
+            76:[0],
+            77:[47],
+            78:[49],
+            79:[0],
+            80:[95],
+            81:[59],
+            82:[80],
+            83:[50],
+            84:[50],
+            85:[94],
+            86:[40],
+            87:[60],
+            88:[0],
+            89:[70],
+            90:[70],
+            91:[80],
+            92:[55],
+            93:[0],
+            94:[55],
+            95:[55],
+            96:[55],
+            97:[0],
+            98:[47],
+            99:[69],
+            100:[58],
+            101:[0],
+            102:[49],
+            103:[45],
+            104:[49],
+            105:[0],
+            106:[50],
+            107:[50],
+            108:[80],
+            109:[45],
+            110:[50],
+            111:[58],
+            112:[100],
+            113:[120],
+            114:[58],
+            115:[0],
+            116:[100],
+            117:[100],
+            118:[0],
+            119:[54],
+            120:[60],
+            121:[60],
+            122:[60],
+            123:[60],
+            124:[60],
+            125:[70],
+            126:[60],
+            127:[70],
+            128:[60],
+            129:[70],
+            130:[75],
+            131:[100],
+            132:[160],
+            133:[0],
+            134:[60],
+            135:[60],
+            136:[60],
+            137:[60],
+            138:[80],
+            139:[47],
+            140:[0],
+            141:[95],
+            142:[110],
+            143:[95],
+            144:[50],
+            145:[70],
+            146:[60],
+            147:[95],
+            148:[68],
+            149:[70],
+            150:[100]
+            }
+
+
+
+df_global = df_global.dropna(subset=['Q24'])
+
+df_global.reset_index(drop=True, inplace=True)
+
+
+
+for df_row in range (len(df_global)):
+    if (cig_price[df_global.loc[df_row,'Q21']][0])-(cig_price[df_global.loc[df_row,'Q26']][0])<=40 and (cig_price[df_global.loc[df_row,'Q21']][0])-(cig_price[df_global.loc[df_row,'Q26']][0])>=-40:
+    
+        df_global.drop(df_row,inplace=True)
+        # print(df_global.loc[:,['Q21','Q24','Q27']])
+    else:
+        pass
+    
+    
+df_modified = df_global.loc[:,['Respondent_ID','Resp_Name','Interviewer','Q21','Q26']]
+
+
+input_string1=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148]
+input_string = "Amercian Club Length - 84 mm MRP/10's - Rs.120,American Club<br>Length - 84 mm<br>MRP/10's - Rs.100,Benson & Hedges <br>Length - 84 mm<br>MRP/10's - Rs.165,Blue Charms (Unspecified),Blue Charms 64<br>Length - 64 mm<br>MRP/10's - Rs.40,Blue Charms Regular 64<br>Length - 64 mm<br>MRP/10's - Rs.40,Blue Charms<br>Length - 64 mm<br>MRP/10's - Rs.48,Capstan (Unspecified),Capstan Excel<br>Length - 69 mm<br>MRP/10's - Rs.80,Capstan Filter<br>Length - 64 mm<br>MRP/10's - Rs.65,Capstan Metro<br>Length - 64 mm<br>MRP/10's - Rs.40,Capstan Pilot<br>Length - 64 mm<br>MRP/10's - Rs.47,Capstan Special Filter<br>Length - 64 mm<br>MRP/10's - Rs.65,Cavanders Gold Rich Taste<br>Length - 64 mm<br>MRP/10's - Rs.48,Cavenders Special Filter<br>Length - 64 mm<br>MRP/10's - Rs.43,Charminar (Unspecified),Charminar Filter 64<br>Length - 64 mm<br>MRP/10's - Rs.40,Charminar Plains 64<br>Length - 64 mm<br>MRP/10's - Rs.40,Charms (Unspecified),Charms Regular Filter<br>Length - 64 mm<br>MRP/10's - Rs.40,Charms Virginia Filter<br>Length - 64 mm<br>MRP/10's - Rs.48,Classic (Unspecified),Classic-20'S<br>Length - 84 mm<br>MRP/10's - Rs.165,Classic Connect<br>Length - 97 mm<br>MRP/10's - Rs.150,Classic Ice Burst<br>Length - 84 mm<br>MRP/10's - Rs.165,Classic Mild<br>Length - 84 mm<br>MRP/10's - Rs.165,Classic<br>Length - 84 mm<br>MRP/10's - Rs.165,Editions Trio<br>Length - 92 mm<br>MRP/10's - Rs.100,Flake (Unspecified),Flake Fine Cut<br>Length - 64 mm<br>MRP/10's - Rs.50,Flake Fresh<br>Length - 64 mm<br>MRP/10's - Rs.50,Flake Special Filter<br>Length - 64 mm<br>MRP/10's - Rs.60,Focus<br>Length - 64 mm<br>MRP/10's - Rs.51,Focus<br>Length - 69 mm<br>MRP/10's - Rs.70,Four Square (Unspecified),Four Square Clove Crush<br>Length - 64 mm<br>MRP/10's - Rs.90,Four Square Clove Crush<br>Length - 69 mm<br>MRP/10's - Rs.89,Four Square Crush Pan<br>Length - 69 mm<br>MRP/10's - Rs.89,Four Square Crush<br>Length - 69 mm<br>MRP/10's - Rs.89,Four Square Special<br>Length - 69 mm<br>MRP/10's - Rs.85,Four Square<br>Length - 69 mm<br>MRP/10's - Rs.55,Four Square<br>Length - 69 mm<br>MRP/10's - Rs.89,Gold Flake (Unspecified),Gold Flake Clove Filter<br>Length - 84 mm<br>MRP/10's - Rs.200,Gold Flake Filter<br>Length - 69 mm<br>MRP/10's - Rs.100,Gold Flake Indie Mint<br>Length - 69 mm<br>MRP/10's - Rs.100,Gold Flake Indie Mint<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Kings Lights<br>Length - 84 mm<br>MRP/10's - Rs.165,Gold Flake Kings<br>Length - 84 mm<br>MRP/10's - Rs.165,Gold Flake Mix Pod<br>Length - 84 mm<br>MRP/10's - Rs.165,Gold Flake Neo Smart<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Neo -Super Slim<br>Length - 97 mm<br>MRP/10's - Rs.150,Gold Flake Premium Filter Mint<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Premium Filter<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Premium Fresh Mint<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Premium Mint Switch<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Premium<br>Length - 69 mm<br>MRP/10's - Rs.95,Gold Flake Special<br>Length - 64 mm<br>MRP/10's - Rs.60,Gold Flake Super Star<br>Length - 64 mm<br>MRP/10's - Rs.50,Gold Flake Super Star<br>Length - 64 mm<br>MRP/10's - Rs.59,Gold Flake Superstar Mint<br>Length - 64 mm<br>MRP/10's - Rs.59,Gold Magic<br>Length - 84 mm,India King<br>Length - 84 mm<br>MRP/10's - Rs.180,Kingston 64<br>Length - 64 mm<br>MRP/10's - Rs.45,Marlboro (Unspecified),Marlboro <br>Length - 84 mm<br>MRP/10's - Rs.165,Marlboro Advance Compact<br>Length - 69 mm<br>MRP/10's - Rs.100,Marlboro Advance Compact<br>Length - 69 mm<br>MRP/10's - Rs.95,Marlboro Advance Pocket<br>Length - 64 mm<br>MRP/10's - Rs.60,Marlboro Advance<br>Length - 84 mm<br>MRP/10's - Rs.165,Marlboro Advance<br>Length - 84 mm<br>MRP/10's - Rs.330,Marlboro Clove<br>Length - 84 mm,Marlboro Clove<br>Length - 84 mm<br>MRP/10's - Rs.165,Marlboro Compact<br>Length - 69 mm<br>MRP/10's - Rs.95,Marlboro<br>Length - 84 mm<br>MRP/10's - Rs.165,Moments (Unspecified),Moments Regular 64<br>Length - 64 mm<br>MRP/10's - Rs.47,Moments Satins 64<br>Length - 64 mm<br>MRP/10's - Rs.49,Navy Cut (Unspecified),Navy Cut 69<br>Length - 69 mm<br>MRP/10's - Rs.95,Navy Cut Fruit<br>Length - 69 mm<br>MRP/10's - Rs.59,Navy Cut Rsft<br>Length - 69 mm<br>MRP/10's - Rs.80,Navy Cut Virginia Filter<br>Length - 64 mm<br>MRP/10's - Rs.50,Navy Cut Virginia/ Centure<br>Length - 64 mm<br>MRP/10's - Rs.50,Navy Cut<br>Length - 74 mm<br>MRP/10's - Rs.94,Originals<br>Length - 64 mm<br>MRP/10's - Rs.40,Pall Mall<br>Length - 64 mm<br>MRP/10's - Rs.60,Panama<br>Length - 64 mm,Players Fruity Cool / Players Minty Cool<br>Length - 69 mm<br>MRP/10's - Rs.70,Players<br>Length - 69 mm<br>MRP/10's - Rs.70,Players<br>Length - 69 mm<br>MRP/10's - Rs.80,R&W (M)<br>Length - 64 mm<br>MRP/10's - Rs.55,Red And White (Unspecified)<br>,Red And White Flake<br>Length - 69 mm<br>MRP/10's - Rs.55,Red And White Mint Burst<br>Length - 64 mm<br>MRP/10's - Rs.55,Red And White<br>Length - 69 mm<br>MRP/10's - Rs.55,Red Charms (Unspecified),Red Charms Mini Kings<br>Length - 64 mm<br>MRP/10's - Rs.47,Red Charms<br>Length - 69 mm<br>MRP/10's - Rs.69,Red Special Longs 69<br>Length - 69 mm<br>MRP/10's - Rs.58,Regent<br>Length - 84 mm,Royal<br>Length - 64 mm<br>MRP/10's - Rs.49,Select Flake Premium<br>Length - 64 mm<br>MRP/10's - Rs.45,Select<br>Length - 64 mm<br>MRP/10's - Rs.49,Silk Cut (Unspecified),Silk Cut Blue<br>Length - 64 mm<br>MRP/10's - Rs.50,Silk Cut Filter<br>Length - 64 mm<br>MRP/10's - Rs.50,Silk Cut Filter<br>Length - 69 mm<br>MRP/10's - Rs.80,Silk Cut Virginia<br>Length - 64 mm<br>MRP/10's - Rs.45,Silk Cut<br>Length - 64 mm<br>MRP/10's - Rs.50,Stellar <br>Length - 69 mm<br>MRP/10's - Rs.58,Stellar Define/Shift<br>Length - 99 mm<br>MRP/10's - Rs.100,Stellar Define<br>Length - 84 mm<br>MRP/10's - Rs.120,Stellar<br>Length - 69 mm<br>MRP/10's - Rs.58,Steller (Unspecified),Steller Define<br>Length - 84 mm<br>MRP/10's - Rs.100,Steller Shift<br>Length - 84 mm<br>MRP/10's - Rs.100,Total (Unspecified),Total Active Mint<br>Length - 64 mm<br>MRP/10's - Rs.54,Total Active Mint<br>Length - 64 mm<br>MRP/10's - Rs.60,Total Fruity Five<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Fusion<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Red White<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Refresh<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Refresh<br>Length - 69 mm<br>MRP/10's - Rs.70,Total Royal Twist<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Royal Twist<br>Length - 69 mm<br>MRP/10's - Rs.70,Total Spearmint<br>Length - 69 mm<br>MRP/10's - Rs.60,Total Spearmint<br>Length - 69 mm<br>MRP/10's - Rs.70,Total Spearmint<br>Length - 69 mm<br>MRP/10's - Rs.75,Total T3<br>Length - 92 mm<br>MRP/10's - Rs.100,Total T3<br>Length - 92 mm<br>MRP/10's - Rs.160,Wave (Unspecified),Wave Cool Mint<br>Length - 69 mm<br>MRP/10's - Rs.60,Wave Fruity<br>Length - 69 mm<br>MRP/10's - Rs.60,Wave Mint<br>Length - 69 mm<br>MRP/10's - Rs.60,Wave<br>Length - 69 mm<br>MRP/10's - Rs.60,Wft-Reg<br>Length - 69 mm<br>MRP/10's - Rs.80,White Special Extra Smooth 64<br>Length - 64 mm<br>MRP/10's - Rs.47,Wills (Unspecified),Wills Filter<br>Length - 69 mm<br>MRP/10's - Rs.95,Wills Filter<br>Length - 74 mm<br>MRP/10's - Rs.110,Wills Flake Filter 69<br>Length - 69 mm<br>MRP/10's - Rs.95,Wills Flake Filter Gold Crest<br>Length - 64 mm<br>MRP/10's - Rs.50,Wills Flake Filter<br>Length - 64 mm<br>MRP/10's - Rs.70,Wills Flake Special Filter<br>Length - 69 mm<br>MRP/10's - Rs.60,Wills Navy Cut Delux<br>Length - 69 mm<br>MRP/10's - Rs.95,Zaffran 69<br>Length - 69 mm<br>MRP/10's - Rs.68"
+modified_string = input_string.split(",")
+
+dictionary = dict(zip(input_string1, modified_string))
+
+df_modified['Q21'] = df_modified['Q21'].replace(dictionary)
+df_modified['Q26'] = df_modified['Q26'].replace(dictionary)
+
+
+
+
+    
+df_empty= pd.DataFrame()  
+df_s = df_modified['Interviewer'].value_counts()
+    
+interviewererror=pd.DataFrame(df_s)    
+
+total_sum = interviewererror.sum()
+total_sum.name = 'Total'
+interviewererror = interviewererror._append(total_sum)
+interviewererror['Total']=interviewererror.sum(min_count=1,axis=1)
+   
+
+
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+interviewererror.to_csv(output_path, mode='a', index=True, )
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+# Error12 : Q25 Price fluctuation between all 3 preferred brand 
+
+df_global=df.copy()
+
+df_global.reset_index(drop=True, inplace=True)
+
+Error_n = ['Error12 : Q25 Price fluctuation between all 3 preferred brand   ']
+
+
+control_col=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148]
+
+
+cig_price={ 1:[120],
+            2:[100],
+            3:[165],
+            4:[0],
+            5:[40],
+            6:[40],
+            7:[48],
+            8:[0],
+            9:[80],
+            10:[65],
+            11:[40],
+            12:[47],
+            13:[65],
+            14:[48],
+            15:[43],
+            16:[0],
+            17:[40],
+            18:[40],
+            19:[0],
+            20:[40],
+            21:[48],
+            22:[0],
+            23:[165],
+            24:[150],
+            25:[165],
+            26:[165],
+            27:[165],
+            28:[100],
+            29:[0],
+            30:[50],
+            31:[50],
+            32:[60],
+            33:[51],
+            34:[70],
+            35:[0],
+            36:[90],
+            37:[89],
+            38:[89],
+            39:[89],
+            40:[85],
+            41:[55],
+            42:[89],
+            43:[0],
+            44:[200],
+            45:[100],
+            46:[100],
+            47:[95],
+            48:[165],
+            49:[165],
+            50:[165],
+            51:[95],
+            52:[150],
+            53:[95],
+            54:[95],
+            55:[95],
+            56:[95],
+            57:[95],
+            58:[60],
+            59:[50],
+            60:[59],
+            61:[59],
+            62:[0],
+            63:[180],
+            64:[45],
+            65:[0],
+            66:[165],
+            67:[100],
+            68:[95],
+            69:[60],
+            70:[165],
+            71:[330],
+            72:[0],
+            73:[165],
+            74:[95],
+            75:[165],
+            76:[0],
+            77:[47],
+            78:[49],
+            79:[0],
+            80:[95],
+            81:[59],
+            82:[80],
+            83:[50],
+            84:[50],
+            85:[94],
+            86:[40],
+            87:[60],
+            88:[0],
+            89:[70],
+            90:[70],
+            91:[80],
+            92:[55],
+            93:[0],
+            94:[55],
+            95:[55],
+            96:[55],
+            97:[0],
+            98:[47],
+            99:[69],
+            100:[58],
+            101:[0],
+            102:[49],
+            103:[45],
+            104:[49],
+            105:[0],
+            106:[50],
+            107:[50],
+            108:[80],
+            109:[45],
+            110:[50],
+            111:[58],
+            112:[100],
+            113:[120],
+            114:[58],
+            115:[0],
+            116:[100],
+            117:[100],
+            118:[0],
+            119:[54],
+            120:[60],
+            121:[60],
+            122:[60],
+            123:[60],
+            124:[60],
+            125:[70],
+            126:[60],
+            127:[70],
+            128:[60],
+            129:[70],
+            130:[75],
+            131:[100],
+            132:[160],
+            133:[0],
+            134:[60],
+            135:[60],
+            136:[60],
+            137:[60],
+            138:[80],
+            139:[47],
+            140:[0],
+            141:[95],
+            142:[110],
+            143:[95],
+            144:[50],
+            145:[70],
+            146:[60],
+            147:[95],
+            148:[68],
+            149:[70],
+            150:[100],
+            154:[100], 
+            }
+
+
+
+
+
+for df_row in range (len(df_global)):
+    if (cig_price[df_global.loc[df_row,'T_Q25_1']][0])-(cig_price[df_global.loc[df_row,'T_Q25_2']][0])<=40 and (cig_price[df_global.loc[df_row,'T_Q25_1']][0])-(cig_price[df_global.loc[df_row,'T_Q25_2']][0])>=-40:
+    
+        df_global.drop(df_row,inplace=True)
+    elif (cig_price[df_global.loc[df_row,'T_Q25_2']][0])-(cig_price[df_global.loc[df_row,'T_Q25_3']][0])<=40 and (cig_price[df_global.loc[df_row,'T_Q25_2']][0])-(cig_price[df_global.loc[df_row,'T_Q25_3']][0])>=-40:
+        df_global.drop(df_row,inplace=True)
+    elif (cig_price[df_global.loc[df_row,'T_Q25_1']][0])-(cig_price[df_global.loc[df_row,'T_Q25_3']][0])<=40 and (cig_price[df_global.loc[df_row,'T_Q25_1']][0])-(cig_price[df_global.loc[df_row,'T_Q25_3']][0])>=-40:
+         df_global.drop(df_row,inplace=True)    
+    else:
+        pass
+    
+    
+df_modified = df_global.loc[:,['Respondent_ID','Resp_Name','Interviewer','T_Q25_1','T_Q25_2','T_Q25_3']]
+
+    
+df_empty= pd.DataFrame()  
+df_s = df_modified['Interviewer'].value_counts()
+    
+interviewererror=pd.DataFrame(df_s)    
+
+total_sum = interviewererror.sum()
+total_sum.name = 'Total'
+interviewererror = interviewererror._append(total_sum)
+interviewererror['Total']=interviewererror.sum(min_count=1,axis=1)
+   
+
+
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+interviewererror.to_csv(output_path, mode='a', index=True, )
+
+    
+
+
+
+
+# Error13: Frequency of number of brands selected  by each interviewer in aided awareness(Q15)
+
+
+
+
+df_global=df.copy()
+
+Error_n = ['Error13: Frequency of number of brands selected  by each interviewer in aided awareness(Q15)']
+
+
+
+
+df_global['sum_columns'] = df_global[['A_Q15_1','A_Q15_2','A_Q15_3','A_Q15_4','A_Q15_5','A_Q15_6','A_Q15_7','A_Q15_8','A_Q15_9','A_Q15_10','A_Q15_11','A_Q15_12','A_Q15_13','A_Q15_14','A_Q15_15','A_Q15_16','A_Q15_17','A_Q15_18','A_Q15_19','A_Q15_20','A_Q15_21','A_Q15_22','A_Q15_23','A_Q15_24','A_Q15_25','A_Q15_26','A_Q15_27','A_Q15_28','A_Q15_29','A_Q15_30','A_Q15_31','A_Q15_32','A_Q15_33','A_Q15_34','A_Q15_35','A_Q15_36','A_Q15_37','A_Q15_38','A_Q15_39','A_Q15_40','A_Q15_41','A_Q15_42','A_Q15_43','A_Q15_44','A_Q15_45','A_Q15_46','A_Q15_47','A_Q15_48','A_Q15_49','A_Q15_50','A_Q15_51','A_Q15_52','A_Q15_53','A_Q15_54','A_Q15_55','A_Q15_56','A_Q15_57','A_Q15_58','A_Q15_59','A_Q15_60','A_Q15_61','A_Q15_62','A_Q15_63','A_Q15_64','A_Q15_65','A_Q15_66','A_Q15_67','A_Q15_68','A_Q15_69','A_Q15_70','A_Q15_71','A_Q15_72','A_Q15_73','A_Q15_74','A_Q15_75','A_Q15_76','A_Q15_77','A_Q15_78','A_Q15_79','A_Q15_80','A_Q15_81','A_Q15_82','A_Q15_83','A_Q15_84','A_Q15_85','A_Q15_86','A_Q15_87','A_Q15_88','A_Q15_89','A_Q15_90','A_Q15_91','A_Q15_92','A_Q15_93','A_Q15_94','A_Q15_95','A_Q15_96','A_Q15_97','A_Q15_98','A_Q15_99','A_Q15_100','A_Q15_101','A_Q15_102','A_Q15_103','A_Q15_104','A_Q15_105','A_Q15_106','A_Q15_107','A_Q15_108','A_Q15_109','A_Q15_110','A_Q15_111','A_Q15_112','A_Q15_113','A_Q15_114','A_Q15_115','A_Q15_116','A_Q15_117','A_Q15_118','A_Q15_119','A_Q15_120','A_Q15_121','A_Q15_122','A_Q15_123','A_Q15_124','A_Q15_125','A_Q15_126','A_Q15_127','A_Q15_128','A_Q15_129','A_Q15_130','A_Q15_131','A_Q15_132','A_Q15_133','A_Q15_134','A_Q15_135','A_Q15_136','A_Q15_137','A_Q15_138','A_Q15_139','A_Q15_140','A_Q15_141','A_Q15_142','A_Q15_143','A_Q15_144','A_Q15_145','A_Q15_146','A_Q15_147','A_Q15_148'
+
+]].sum(axis=1)
+
+
+df_modified = df_global.loc[:,['Resp_Name','Interviewer','sum_columns']]
+
+crosstab_result = pd.crosstab(df_modified['Interviewer'], df_modified['sum_columns'])
+
+
+
+# dynamic_headers = [f'brands{i}' for i in range(1, len(crosstab_result.columns) + 1)]
+
+count1=pd.DataFrame(crosstab_result )
+
+# count1.columns = [column_header.rjust(20, ' ') for column_header in count1.columns]
+
+# Sum_name=pd.DataFrame(df_s)
+
+
+
+df_empty= pd.DataFrame()  
+
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+count1.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Error14: Frequency of number of brands selected  by each interviewer in ever smoked(Q16)
+
+
+
+
+
+df_global=df.copy()
+
+Error_n = ['Error14: Frequency of number of brands selected  by each interviewer in ever smoked(Q16)']
+
+
+
+
+df_global['sum_columns'] = df_global[['A_Q16_1','A_Q16_2','A_Q16_3','A_Q16_4','A_Q16_5','A_Q16_6','A_Q16_7','A_Q16_8','A_Q16_9','A_Q16_10','A_Q16_11','A_Q16_12','A_Q16_13','A_Q16_14','A_Q16_15','A_Q16_16','A_Q16_17','A_Q16_18','A_Q16_19','A_Q16_20','A_Q16_21','A_Q16_22','A_Q16_23','A_Q16_24','A_Q16_25','A_Q16_26','A_Q16_27','A_Q16_28','A_Q16_29','A_Q16_30','A_Q16_31','A_Q16_32','A_Q16_33','A_Q16_34','A_Q16_35','A_Q16_36','A_Q16_37','A_Q16_38','A_Q16_39','A_Q16_40','A_Q16_41','A_Q16_42','A_Q16_43','A_Q16_44','A_Q16_45','A_Q16_46','A_Q16_47','A_Q16_48','A_Q16_49','A_Q16_50','A_Q16_51','A_Q16_52','A_Q16_53','A_Q16_54','A_Q16_55','A_Q16_56','A_Q16_57','A_Q16_58','A_Q16_59','A_Q16_60','A_Q16_61','A_Q16_62','A_Q16_63','A_Q16_64','A_Q16_65','A_Q16_66','A_Q16_67','A_Q16_68','A_Q16_69','A_Q16_70','A_Q16_71','A_Q16_72','A_Q16_73','A_Q16_74','A_Q16_75','A_Q16_76','A_Q16_77','A_Q16_78','A_Q16_79','A_Q16_80','A_Q16_81','A_Q16_82','A_Q16_83','A_Q16_84','A_Q16_85','A_Q16_86','A_Q16_87','A_Q16_88','A_Q16_89','A_Q16_90','A_Q16_91','A_Q16_92','A_Q16_93','A_Q16_94','A_Q16_95','A_Q16_96','A_Q16_97','A_Q16_98','A_Q16_99','A_Q16_100','A_Q16_101','A_Q16_102','A_Q16_103','A_Q16_104','A_Q16_105','A_Q16_106','A_Q16_107','A_Q16_108','A_Q16_109','A_Q16_110','A_Q16_111','A_Q16_112','A_Q16_113','A_Q16_114','A_Q16_115','A_Q16_116','A_Q16_117','A_Q16_118','A_Q16_119','A_Q16_121','A_Q16_122','A_Q16_123','A_Q16_124','A_Q16_125','A_Q16_126','A_Q16_127','A_Q16_128','A_Q16_129','A_Q16_130','A_Q16_131','A_Q16_132','A_Q16_133','A_Q16_134','A_Q16_135','A_Q16_136','A_Q16_137','A_Q16_138','A_Q16_139','A_Q16_140','A_Q16_141','A_Q16_142','A_Q16_143','A_Q16_144','A_Q16_145','A_Q16_146','A_Q16_147','A_Q16_148'
+
+]].sum(axis=1)
+
+
+df_modified = df_global.loc[:,['Resp_Name','Interviewer','sum_columns']]
+
+crosstab_result = pd.crosstab(df_modified['Interviewer'], df_modified['sum_columns'])
+
+
+
+# dynamic_headers = [f'brands{i}' for i in range(1, len(crosstab_result.columns) + 1)]
+
+count1=pd.DataFrame(crosstab_result )
+
+# count1.columns = [column_header.rjust(20, ' ') for column_header in count1.columns]
+
+# Sum_name=pd.DataFrame(df_s)
+
+
+
+df_empty= pd.DataFrame()  
+
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+count1.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+
+
+
+# Error15: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 year(Q18)
+
+
+df_global=df.copy()
+
+Error_n = ['Error15: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 year(Q18)']
+
+
+
+
+df_global['sum_columns'] = df_global[['A_Q18_1','A_Q18_2','A_Q18_3','A_Q18_4','A_Q18_5','A_Q18_6','A_Q18_7','A_Q18_8','A_Q18_9','A_Q18_10','A_Q18_11','A_Q18_12','A_Q18_13','A_Q18_14','A_Q18_15','A_Q18_16','A_Q18_17','A_Q18_18','A_Q18_19','A_Q18_20','A_Q18_21','A_Q18_22','A_Q18_23','A_Q18_24','A_Q18_25','A_Q18_26','A_Q18_27','A_Q18_28','A_Q18_29','A_Q18_30','A_Q18_31','A_Q18_32','A_Q18_33','A_Q18_34','A_Q18_35','A_Q18_36','A_Q18_37','A_Q18_38','A_Q18_39','A_Q18_40','A_Q18_41','A_Q18_42','A_Q18_43','A_Q18_44','A_Q18_45','A_Q18_46','A_Q18_47','A_Q18_48','A_Q18_49','A_Q18_50','A_Q18_51','A_Q18_52','A_Q18_53','A_Q18_54','A_Q18_55','A_Q18_56','A_Q18_57','A_Q18_58','A_Q18_59','A_Q18_60','A_Q18_61','A_Q18_62','A_Q18_63','A_Q18_64','A_Q18_65','A_Q18_66','A_Q18_67','A_Q18_68','A_Q18_69','A_Q18_70','A_Q18_71','A_Q18_72','A_Q18_73','A_Q18_74','A_Q18_75','A_Q18_76','A_Q18_77','A_Q18_78','A_Q18_79','A_Q18_80','A_Q18_81','A_Q18_82','A_Q18_83','A_Q18_84','A_Q18_85','A_Q18_86','A_Q18_87','A_Q18_88','A_Q18_89','A_Q18_90','A_Q18_91','A_Q18_92','A_Q18_93','A_Q18_94','A_Q18_95','A_Q18_96','A_Q18_97','A_Q18_98','A_Q18_99','A_Q18_100','A_Q18_101','A_Q18_102','A_Q18_103','A_Q18_104','A_Q18_105','A_Q18_106','A_Q18_107','A_Q18_108','A_Q18_109','A_Q18_110','A_Q18_111','A_Q18_112','A_Q18_113','A_Q18_114','A_Q18_115','A_Q18_116','A_Q18_117','A_Q18_118','A_Q18_119','A_Q18_120','A_Q18_121','A_Q18_122','A_Q18_123','A_Q18_124','A_Q18_125','A_Q18_126','A_Q18_127','A_Q18_128','A_Q18_129','A_Q18_130','A_Q18_131','A_Q18_132','A_Q18_133','A_Q18_134','A_Q18_135','A_Q18_136','A_Q18_137','A_Q18_138','A_Q18_139','A_Q18_140','A_Q18_141','A_Q18_142','A_Q18_143','A_Q18_144','A_Q18_145','A_Q18_146','A_Q18_147','A_Q18_148'
+
+]].sum(axis=1)
+
+
+df_modified = df_global.loc[:,['Resp_Name','Interviewer','sum_columns']]
+
+crosstab_result = pd.crosstab(df_modified['Interviewer'], df_modified['sum_columns'])
+
+
+
+# dynamic_headers = [f'brands{i}' for i in range(1, len(crosstab_result.columns) + 1)]
+
+count1=pd.DataFrame(crosstab_result )
+
+# count1.columns = [column_header.rjust(20, ' ') for column_header in count1.columns]
+
+# Sum_name=pd.DataFrame(df_s)
+
+
+
+df_empty= pd.DataFrame()  
+
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+count1.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+
+
+
+# Error16: Frequency of number of brands selected  by each interviewer in ever smoked in last 3 months(Q19)
+
+
+df_global=df.copy()
+
+Error_n = ['Error16: Frequency of number of brands selected  by each interviewer in ever smoked in last 3 months(Q19)']
+
+
+
+
+df_global['sum_columns'] = df_global[['A_Q19_1','A_Q19_2','A_Q19_3','A_Q19_4','A_Q19_5','A_Q19_6','A_Q19_7','A_Q19_8','A_Q19_9','A_Q19_10','A_Q19_11','A_Q19_12','A_Q19_13','A_Q19_14','A_Q19_15','A_Q19_16','A_Q19_17','A_Q19_18','A_Q19_19','A_Q19_20','A_Q19_21','A_Q19_22','A_Q19_23','A_Q19_24','A_Q19_25','A_Q19_26','A_Q19_27','A_Q19_28','A_Q19_29','A_Q19_30','A_Q19_31','A_Q19_32','A_Q19_33','A_Q19_34','A_Q19_35','A_Q19_36','A_Q19_37','A_Q19_38','A_Q19_39','A_Q19_40','A_Q19_41','A_Q19_42','A_Q19_43','A_Q19_44','A_Q19_45','A_Q19_46','A_Q19_47','A_Q19_48','A_Q19_49','A_Q19_50','A_Q19_51','A_Q19_52','A_Q19_53','A_Q19_54','A_Q19_55','A_Q19_56','A_Q19_57','A_Q19_58','A_Q19_59','A_Q19_60','A_Q19_61','A_Q19_62','A_Q19_63','A_Q19_64','A_Q19_65','A_Q19_66','A_Q19_67','A_Q19_68','A_Q19_69','A_Q19_70','A_Q19_71','A_Q19_72','A_Q19_73','A_Q19_74','A_Q19_75','A_Q19_76','A_Q19_77','A_Q19_78','A_Q19_79','A_Q19_80','A_Q19_81','A_Q19_82','A_Q19_83','A_Q19_84','A_Q19_85','A_Q19_86','A_Q19_87','A_Q19_88','A_Q19_89','A_Q19_90','A_Q19_91','A_Q19_92','A_Q19_93','A_Q19_94','A_Q19_95','A_Q19_96','A_Q19_97','A_Q19_98','A_Q19_99','A_Q19_100','A_Q19_101','A_Q19_102','A_Q19_103','A_Q19_104','A_Q19_105','A_Q19_106','A_Q19_107','A_Q19_108','A_Q19_109','A_Q19_110','A_Q19_111','A_Q19_112','A_Q19_113','A_Q19_114','A_Q19_115','A_Q19_116','A_Q19_117','A_Q19_118','A_Q19_119','A_Q19_120','A_Q19_121','A_Q19_122','A_Q19_123','A_Q19_124','A_Q19_125','A_Q19_126','A_Q19_127','A_Q19_128','A_Q19_129','A_Q19_130','A_Q19_131','A_Q19_132','A_Q19_133','A_Q19_134','A_Q19_135','A_Q19_136','A_Q19_137','A_Q19_138','A_Q19_139','A_Q19_140','A_Q19_141','A_Q19_142','A_Q19_143','A_Q19_144','A_Q19_145','A_Q19_146','A_Q19_147','A_Q19_148'
+
+]].sum(axis=1)
+
+
+df_modified = df_global.loc[:,['Resp_Name','Interviewer','sum_columns']]
+
+crosstab_result = pd.crosstab(df_modified['Interviewer'], df_modified['sum_columns'])
+
+
+
+# dynamic_headers = [f'brands{i}' for i in range(1, len(crosstab_result.columns) + 1)]
+
+count1=pd.DataFrame(crosstab_result )
+
+# count1.columns = [column_header.rjust(20, ' ') for column_header in count1.columns]
+
+# Sum_name=pd.DataFrame(df_s)
+
+
+
+df_empty= pd.DataFrame()  
+
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+count1.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Error17: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 weeks(Q20)
+
+
+df_global=df.copy()
+
+Error_n = ['Error17: Frequency of number of brands selected  by each interviewer in ever smoked in last 1 weeks(Q20)']
+
+
+
+
+df_global['sum_columns'] = df_global[['A_Q20_1','A_Q20_2','A_Q20_3','A_Q20_4','A_Q20_5','A_Q20_6','A_Q20_7','A_Q20_8','A_Q20_9','A_Q20_10','A_Q20_11','A_Q20_12','A_Q20_13','A_Q20_14','A_Q20_15','A_Q20_16','A_Q20_17','A_Q20_18','A_Q20_19','A_Q20_20','A_Q20_21','A_Q20_22','A_Q20_23','A_Q20_24','A_Q20_25','A_Q20_26','A_Q20_27','A_Q20_28','A_Q20_29','A_Q20_30','A_Q20_31','A_Q20_32','A_Q20_33','A_Q20_34','A_Q20_35','A_Q20_36','A_Q20_37','A_Q20_38','A_Q20_39','A_Q20_40','A_Q20_41','A_Q20_42','A_Q20_43','A_Q20_44','A_Q20_45','A_Q20_46','A_Q20_47','A_Q20_48','A_Q20_49','A_Q20_50','A_Q20_51','A_Q20_52','A_Q20_53','A_Q20_54','A_Q20_55','A_Q20_56','A_Q20_57','A_Q20_58','A_Q20_59','A_Q20_60','A_Q20_61','A_Q20_62','A_Q20_63','A_Q20_64','A_Q20_65','A_Q20_66','A_Q20_67','A_Q20_68','A_Q20_69','A_Q20_70','A_Q20_71','A_Q20_72','A_Q20_73','A_Q20_74','A_Q20_75','A_Q20_76','A_Q20_77','A_Q20_78','A_Q20_79','A_Q20_80','A_Q20_81','A_Q20_82','A_Q20_83','A_Q20_84','A_Q20_85','A_Q20_86','A_Q20_87','A_Q20_88','A_Q20_89','A_Q20_90','A_Q20_91','A_Q20_92','A_Q20_93','A_Q20_94','A_Q20_95','A_Q20_96','A_Q20_97','A_Q20_98','A_Q20_99','A_Q20_100','A_Q20_101','A_Q20_102','A_Q20_103','A_Q20_104','A_Q20_105','A_Q20_106','A_Q20_107','A_Q20_108','A_Q20_109','A_Q20_110','A_Q20_111','A_Q20_112','A_Q20_113','A_Q20_114','A_Q20_115','A_Q20_116','A_Q20_117','A_Q20_118','A_Q20_119','A_Q20_120','A_Q20_121','A_Q20_122','A_Q20_123','A_Q20_124','A_Q20_125','A_Q20_126','A_Q20_127','A_Q20_128','A_Q20_129','A_Q20_130','A_Q20_131','A_Q20_132','A_Q20_133','A_Q20_134','A_Q20_135','A_Q20_136','A_Q20_137','A_Q20_138','A_Q20_139','A_Q20_140','A_Q20_141','A_Q20_142','A_Q20_143','A_Q20_144','A_Q20_145','A_Q20_146','A_Q20_147','A_Q20_148'
+
+]].sum(axis=1)
+
+
+df_modified = df_global.loc[:,['Resp_Name','Interviewer','sum_columns']]
+
+crosstab_result = pd.crosstab(df_modified['Interviewer'], df_modified['sum_columns'])
+
+
+
+# dynamic_headers = [f'brands{i}' for i in range(1, len(crosstab_result.columns) + 1)]
+
+count1=pd.DataFrame(crosstab_result )
+
+# count1.columns = [column_header.rjust(20, ' ') for column_header in count1.columns]
+
+# Sum_name=pd.DataFrame(df_s)
+
+
+
+df_empty= pd.DataFrame()  
+
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_modified.to_csv(output_path,mode='a', index=False)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+count1.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Error18 : QB1 - when did you first hear about Editions trio 
+
+
+
+
+Error_n = ['Error18 : QB1 - when did you first hear about Editions trio ']
+
+
+
+df_global=df.copy()
+
+input_string1=[1,2,3,4]
+input_string2=['In last 1 month','2-3 Month back','3-6 Month back','More than 6 month back']
+dictionary = dict(zip(input_string1, input_string2))
+
+df_global['B1'] = df_global['B1'].replace(dictionary)
+
+
+
+df_s=df_global['B1'].value_counts()
+
+df_percent = df_global['B1'].value_counts(normalize=True) * 100
+
+Df_buyers=pd.DataFrame(df_s)    
+Df_buyerspercen=pd.DataFrame(df_percent)   
+
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+Df_buyers.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Df_buyerspercen.to_csv(output_path, mode='a', index=True)
+
+
+
+
+# Error19 : QB2 - Sources of editions trio awareness 
+
+
+Error_n = ['Error19 : QB2 - Sources of editions trio awareness  ']
+
+
+df_global=df.copy()
+columns_to_sum = ['A_B2_1', 'A_B2_2', 'A_B2_3','A_B2_4','A_B2_5','A_B2_6','A_B2_7','A_B2_8']
+sums = df_global[columns_to_sum].sum()
+
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+sums.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+
+
+# Error20: QB3 - Knowledge of features of Editions trio 
+
+
+
+Error_n = ['Error20 : QB3 - Knowledge of features of Editions trio   ']
+
+
+df_global=df.copy()
+columns_to_sum = ['A_B3_1_1', 'A_B3_1_2', 'A_B3_1_3','A_B3_1_4','A_B3_1_5','A_B3_1_6','A_B3_1_7','A_B3_1_8','A_B3_1_9','A_B3_1_9']
+sums = df_global[columns_to_sum].sum()
+
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+sums.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+
+
+
+
+
+#  Error21: QB4 - What kind of cigarette Editions trio is
+
+
+
+Error_n = [' Error21: QB4 - What kind of cigarette Editions trio is ']
+
+
+df_global=df.copy()
+
+
+input_string1=[1,2,3]
+input_string2=['Regular/Non Ball/Non Button','Ball','DK']
+dictionary = dict(zip(input_string1, input_string2))
+
+df_global['B4'] = df_global['B4'].replace(dictionary)
+
+
+
+df_s=df_global['B4'].value_counts()
+
+df_percent = df_global['B4'].value_counts(normalize=True) * 100
+
+Df_buyers=pd.DataFrame(df_s)    
+Df_buyerspercen=pd.DataFrame(df_percent)   
+
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+Df_buyers.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Df_buyerspercen.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+
+
+#  Error22: QB5 - What is the Flavour of the cigarette
+
+
+
+Error_n = [' Error22: QB5 - What is the Flavour of the cigarette']
+
+
+df_global=df.copy()
+
+
+input_string1=[1,2,3,4,5]
+input_string2=['Kesar/Saffron','Saunf','Mint','Kesar+Sauunf+Mint','Other specify']
+dictionary = dict(zip(input_string1, input_string2))
+
+df_global['B5'] = df_global['B5'].replace(dictionary)
+
+
+
+df_s=df_global['B5'].value_counts()
+
+df_percent = df_global['B5'].value_counts(normalize=True) * 100
+
+Df_buyers=pd.DataFrame(df_s)    
+Df_buyerspercen=pd.DataFrame(df_percent)   
+
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+Df_buyers.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Df_buyerspercen.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Error23: QB6 - Colour of Editions Trio pack
+
+
+
+Error_n = ['Error23: QB6 - Colour of Editions Trio pack  ']
+
+
+df_global=df.copy()
+
+
+
+
+
+input_string1=[1,2,3,4]
+input_string2=['Black','White','Other specify','DK']
+dictionary = dict(zip(input_string1, input_string2))
+
+df_global['B6'] = df_global['B6'].replace(dictionary)
+
+
+
+df_s=df_global['B6'].value_counts()
+
+df_percent = df_global['B6'].value_counts(normalize=True) * 100
+
+Df_buyers=pd.DataFrame(df_s)    
+Df_buyerspercen=pd.DataFrame(df_percent)   
+
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+Df_buyers.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Df_buyerspercen.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+ # Error24: QB7 - Price of 1 stick of Editions trio
+ 
+Error_n = ['Error24: QB7 - Price of 1 stick of Editions trio  ']
+
+df_global=df.copy()
+
+
+
+
+
+
+input_string1=[1,2,3,4,5,6]
+input_string2=['Rs 9','Rs 10','Rs 11',' Rs 12','Rs 13','Other specify']
+dictionary = dict(zip(input_string1, input_string2))
+
+df_global['B7'] = df_global['B7'].replace(dictionary)
+
+
+
+df_s=df_global['B7'].value_counts()
+
+df_percent = df_global['B7'].value_counts(normalize=True) * 100
+
+Df_buyers=pd.DataFrame(df_s)    
+Df_buyerspercen=pd.DataFrame(df_percent)   
+
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+Df_buyers.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Df_buyerspercen.to_csv(output_path, mode='a', index=True)
+
+ 
+ 
+ 
+ 
+# Error25: QB8 - Frequency of Price to be , for 1 cig of Rs 10 
+ 
+
+
+
+Error_n = ['Error25: QB8 - Frequency of Price to be , for 1 cig of Rs 10   ']
+
+df_global=df.copy()
+
+
+
+
+
+
+input_string1=[1,2,3,4,5]
+input_string2=['High value for money','Somewhat value for money','Price is just right',' Somewhat expensive','Too expensive']
+dictionary = dict(zip(input_string1, input_string2))
+
+df_global['B8'] = df_global['B8'].replace(dictionary)
+
+
+
+df_s=df_global['B8'].value_counts()
+
+df_percent = df_global['B8'].value_counts(normalize=True) * 100
+
+Df_buyers=pd.DataFrame(df_s)    
+Df_buyerspercen=pd.DataFrame(df_percent)   
+
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+Df_buyers.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Df_buyerspercen.to_csv(output_path, mode='a', index=True)
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+ # Error26: QC1 - Frequency of when first smoked editoins trio
+
+
+
+Error_n = ['Error26: QC1 - Frequency of when first smoked editoins trio   ']
+
+
+df_global=df.copy()
+
+
+input_string1=[1,2,3,4,5,6]
+input_string2=['In last 1 week','1-2 weeks back','3-4 weeks back',' 1-3 months back','3-6 months back','Prior to 6 months']
+dictionary = dict(zip(input_string1, input_string2))
+
+df_global['B8'] = df_global['B8'].replace(dictionary)
+
+
+df_s=df_global['C1'].value_counts()
+
+df_percent = df_global['C1'].value_counts(normalize=True) * 100
+
+Df_buyers=pd.DataFrame(df_s)    
+Df_buyerspercen=pd.DataFrame(df_percent)   
+
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+Df_buyers.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Df_buyerspercen.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Error27: QC2 - Frequency of rating for It offers good smoking experience
+
+
+
+
+
+
+Error_n = ['Error27: QC2 - Frequency of rating for It offers good smoking experience  ']
+
+
+df_global=df.copy()
+
+input_string1=[1,2,3,4,5]
+input_string2=['Extremely dissatisfied','Somewhat dissatisfied','Neither satisfied nor dissatisfied',' Somewhat satisfied','Extremely satisfied']
+dictionary = dict(zip(input_string1, input_string2))
+
+df_global['T_C2_1'] = df_global['T_C2_1'].replace(dictionary)
+
+
+df_s=df_global['T_C2_1'].value_counts()
+
+df_percent = df_global['T_C2_1'].value_counts(normalize=True) * 100
+
+Df_buyers=pd.DataFrame(df_s)    
+Df_buyerspercen=pd.DataFrame(df_percent)   
+
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+Df_buyers.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Df_buyerspercen.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+
+# Error28 : QC2 - Frequency of rating for Pleasantness of taste of the capsule flavour
+
+
+
+
+Error_n = ['Error28 : QC2 - Frequency of rating for Pleasantness of taste of the capsule flavour']
+
+
+df_global=df.copy()
+
+
+
+input_string1=[1,2,3,4,5]
+input_string2=['Extremely dissatisfied','Somewhat dissatisfied','Neither satisfied nor dissatisfied',' Somewhat satisfied','Extremely satisfied']
+dictionary = dict(zip(input_string1, input_string2))
+
+df_global['T_C2_2'] = df_global['T_C2_2'].replace(dictionary)
+
+
+df_s=df_global['T_C2_2'].value_counts()
+
+df_percent = df_global['T_C2_2'].value_counts(normalize=True) * 100
+
+Df_buyers=pd.DataFrame(df_s)    
+Df_buyerspercen=pd.DataFrame(df_percent)   
+
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+Df_buyers.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Df_buyerspercen.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+
+
+
+
+
+# Error29 : QC3 - Likelihood to purchase editions trio in next 1-3 months
+
+
+
+
+
+Error_n = ['Error29 : QC3 - Likelihood to purchase editions trio in next 1-3 months']
+
+
+df_global=df.copy()
+
+input_string1=[1,2,3,4,5]
+input_string2=['Would definitely not buy','Would probably not buy','May or may not buy',' Would probably buy','Would definitely buy']
+dictionary = dict(zip(input_string1, input_string2))
+df_global['C3'] = df_global['C3'].replace(dictionary)
+
+
+df_s=df_global['C3'].value_counts()
+
+df_percent = df_global['C3'].value_counts(normalize=True) * 100
+
+Df_buyers=pd.DataFrame(df_s)    
+Df_buyerspercen=pd.DataFrame(df_percent)   
+
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+Df_buyers.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Df_buyerspercen.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+
+
+
+
+
+# Error30 : QD1 - Have you seen this cigarette brand
+
+
+Error_n = ['Error30 : QD1 - Have you seen this cigarette brand']
+
+
+df_global=df.copy()
+
+input_string1=[1,2]
+input_string2=['Yes','No']
+dictionary = dict(zip(input_string1, input_string2))
+df_global['D1'] = df_global['D1'].replace(dictionary)
+
+
+df_s=df_global['D1'].value_counts()
+
+df_percent = df_global['D1'].value_counts(normalize=True) * 100
+
+Df_buyers=pd.DataFrame(df_s)    
+Df_buyerspercen=pd.DataFrame(df_percent)   
+
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+Df_buyers.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Df_buyerspercen.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+
+
+
+# Error31 : QD2- Name of the Brand of this Cigarette
+
+
+Error_n = ['Error31 : QD2- Name of the Brand of this Cigarette']
+
+
+df_global=df.copy()
+
+input_string1=[1,2,3,4,99]
+input_string2=['Editions Unspecified','Editions Trio','Trio','Other specify','DK']
+dictionary = dict(zip(input_string1, input_string2))
+df_global['D2'] = df_global['D2'].replace(dictionary)
+
+
+df_s=df_global['D2'].value_counts()
+
+df_percent = df_global['D2'].value_counts(normalize=True) * 100
+
+Df_buyers=pd.DataFrame(df_s)    
+Df_buyerspercen=pd.DataFrame(df_percent)   
+
+
+df_empty= pd.DataFrame()  
+
+df_name= pd.DataFrame(Error_n)  
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+df_name.to_csv(output_path,mode='a', index=False, header=False)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+
+
+Df_buyers.to_csv(output_path, mode='a', index=True)
+
+df_empty.to_csv(output_path,mode='a', index=True)
+df_empty.to_csv(output_path,mode='a', index=True)
+Df_buyerspercen.to_csv(output_path, mode='a', index=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
